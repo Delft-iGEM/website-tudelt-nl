@@ -63,6 +63,7 @@ jobs:
           git config --global credential.helper 'store --file ~/.git-credentials'
 
           cd out
+          rm ./**/.gitignore
           git init
           git add .
           git commit -m "Deploy to igem.tnw.tudelft.nl"
