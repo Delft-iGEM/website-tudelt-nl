@@ -24,7 +24,7 @@ env:
 jobs:
   build-deploy-tudelft:
     runs-on: ubuntu-latest
-    name: Build
+    name: Build and deploy to tudelft.nl
     steps:
       - uses: actions/checkout@v3
       - name: Setup node
@@ -73,7 +73,7 @@ jobs:
 
   build-gh-pages:
     runs-on: ubuntu-latest
-    name: Build
+    name: Build for GitHub Pages
     steps:
       - uses: actions/checkout@v3
       - name: Setup node
@@ -110,6 +110,7 @@ jobs:
           path: ./out
 
   deploy:
+    name: Deploy to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
