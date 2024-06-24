@@ -1,6 +1,12 @@
-import React from "react";
+import React, { FC, PropsWithChildren } from "react";
 
-export const Container = ({
+interface ContainerProps {
+  size?: "small" | "medium" | "large" | "custom";
+  width?: "small" | "medium" | "large" | "custom";
+  className?: string;
+}
+
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   children,
   size = "medium",
   width = "large",

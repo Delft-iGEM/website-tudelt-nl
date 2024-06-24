@@ -24,15 +24,21 @@ const Page: Collection = {
       required: true,
     },
     {
-      type: "object",
-      list: true,
-      name: "blocks",
-      label: "Sections",
-      ui: {
-        visualSelector: true,
-      },
-      templates: [contentBlockSchema],
+      type: "rich-text",
+      label: "Body",
+      name: "body",
+      isBody: true,
     },
+    // {
+    //   type: "object",
+    //   list: true,
+    //   name: "blocks",
+    //   label: "Sections",
+    //   ui: {
+    //     visualSelector: true,
+    //   },
+    //   templates: [contentBlockSchema],
+    // },
   ],
 };
 
