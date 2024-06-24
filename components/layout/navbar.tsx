@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Popover, Transition } from "@headlessui/react";
 import { GlobalHeaderNav } from "../../tina/__generated__/types";
@@ -15,6 +15,20 @@ interface NavbarProps {
 
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<number | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 100) as unknown as number;
+  };
 
   if (item.children) {
     return (
@@ -23,8 +37,8 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
           <>
             <Popover.Button
               className="flex items-center text-white hover:text-gray-300 focus:outline-none"
-              onMouseEnter={() => setIsOpen(true)}
-              onMouseLeave={() => setIsOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               {item.label}
               <ChevronDown className="ml-1 h-4 w-4" />
@@ -40,9 +54,9 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
             >
               <Popover.Panel
                 static
-                className="absolute z-10 w-40 mt-2 bg-white rounded-md shadow-lg"
-                onMouseEnter={() => setIsOpen(true)}
-                onMouseLeave={() => setIsOpen(false)}
+                className="absolute z-10 w-40 mt-2 bg-white shadow-lg"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <div className="py-1">
                   {item.children?.map((child, index) =>
