@@ -7,6 +7,10 @@ const Global: Collection = {
   format: "json",
   ui: {
     global: true,
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
   },
   fields: [
     {
@@ -31,13 +35,44 @@ const Global: Collection = {
           fields: [
             {
               type: "string",
-              label: "Link",
-              name: "href",
+              label: "Label",
+              name: "label",
+              required: true,
             },
             {
               type: "string",
-              label: "Label",
-              name: "label",
+              label: "Link",
+              name: "href",
+              required: true,
+            },
+            {
+              type: "object",
+              label: "Children",
+              name: "children",
+              list: true,
+              ui: {
+                itemProps: (item) => {
+                  return { label: item?.label };
+                },
+                defaultItem: {
+                  href: "child",
+                  label: "Child",
+                },
+              },
+              fields: [
+                {
+                  type: "string",
+                  label: "Label",
+                  name: "label",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  label: "Link",
+                  name: "href",
+                  required: true,
+                },
+              ],
             },
           ],
         },

@@ -1,20 +1,130 @@
-import React, { FC, useState } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Popover, Transition } from "@headlessui/react";
 import { GlobalHeaderNav } from "../../tina/__generated__/types";
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 
-export interface NavbarProps {
-  logo?: React.ReactNode;
-  links?: GlobalHeaderNav[];
+interface NavItemProps {
+  item: GlobalHeaderNav;
 }
 
-const Navbar: FC<NavbarProps> = ({ logo, links = [] }) => {
+interface NavbarProps {
+  logo?: string | React.ReactNode;
+  links: GlobalHeaderNav[];
+}
+
+const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  if (item.children) {
+    return (
+      <Popover className="relative">
+        {() => (
+          <>
+            <Popover.Button
+              className="flex items-center text-white hover:text-gray-300 focus:outline-none"
+              onMouseEnter={() => setIsOpen(true)}
+              onMouseLeave={() => setIsOpen(false)}
+            >
+              {item.label}
+              <ChevronDown className="ml-1 h-4 w-4" />
+            </Popover.Button>
+            <Transition
+              show={isOpen}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              <Popover.Panel
+                static
+                className="absolute z-10 w-40 mt-2 bg-white rounded-md shadow-lg"
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
+              >
+                <div className="py-1">
+                  {item.children?.map((child, index) =>
+                    child !== null ? (
+                      <a
+                        data-tina-field={tinaField(child, "label")}
+                        key={index}
+                        href={child.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        {child.label}
+                      </a>
+                    ) : null
+                  )}
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </>
+        )}
+      </Popover>
+    );
+  }
+
+  return (
+    <a
+      data-tina-field={tinaField(item, "label")}
+      href={item.href}
+      className="text-white hover:text-gray-300"
+    >
+      {item.label}
+    </a>
+  );
+};
+
+const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  if (item.children) {
+    return (
+      <div>
+        <button
+          className="w-full text-left text-white hover:bg-gray-700 px-3 py-2 rounded-md flex justify-between items-center"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {item.label}
+          <ChevronDown
+            className={`ml-1 h-4 w-4 transform ${isOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+        {isOpen && (
+          <div className="pl-4">
+            {item.children.map((child, index) =>
+              child !== null ? (
+                <a
+                  data-tina-field={tinaField(child, "label")}
+                  key={index}
+                  href={child.href}
+                  className="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+                >
+                  {child.label}
+                </a>
+              ) : null
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      data-tina-field={tinaField(item, "label")}
+      href={item.href}
+      className="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+    >
+      {item.label}
+    </a>
+  );
+};
+
+const Navbar: React.FC<NavbarProps> = ({ logo, links }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <nav className="bg-gray-800 p-4">
@@ -24,43 +134,27 @@ const Navbar: FC<NavbarProps> = ({ logo, links = [] }) => {
         {/* Desktop menu */}
         <div className="hidden md:flex space-x-4">
           {links.map((link, index) => (
-            <Link
-              data-tina-field={tinaField(link, "label")}
-              key={index}
-              href={link.href ?? "/"}
-              className="text-white hover:text-gray-300"
-            >
-              {link.label}
-            </Link>
+            <NavItem key={index} item={link} />
           ))}
         </div>
 
         {/* Mobile menu button */}
         <div className="md:hidden">
           <button
-            onClick={toggleMenu}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white focus:outline-none"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {links.map((link, index) => (
-              <Link
-                data-tina-field={tinaField(link, "label")}
-                key={index}
-                href={link.href ?? "/"}
-                className="text-white block hover:bg-gray-700 px-3 py-2 rounded-md"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+      {isMobileMenuOpen && (
+        <div className="md:hidden mt-2">
+          {links.map((link, index) => (
+            <MobileNavItem key={index} item={link} />
+          ))}
         </div>
       )}
     </nav>

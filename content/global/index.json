@@ -2,12 +2,18 @@
   "header": {
     "nav": [
       {
+        "label": "Home",
         "href": "home",
-        "label": "Home"
+        "children": [
+          {
+            "label": "Child",
+            "href": "child"
+          }
+        ]
       },
       {
-        "href": "/test",
-        "label": "Test"
+        "label": "Test",
+        "href": "/test"
       }
     ]
   }

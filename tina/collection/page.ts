@@ -10,9 +10,6 @@ const Page: Collection = {
       if (document._sys.filename === "home") {
         return `/`;
       }
-      if (document._sys.filename === "about") {
-        return `/about`;
-      }
       return undefined;
     },
   },
