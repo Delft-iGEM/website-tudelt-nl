@@ -1,8 +1,6 @@
 import { defineConfig } from "tinacms";
 
-import Post from "./collection/post";
 import Global from "./collection/global";
-import Author from "./collection/author";
 import Page from "./collection/page";
 
 const config = defineConfig({
@@ -30,7 +28,7 @@ const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [Post, Global, Author, Page],
+    collections: [Global, Page],
   },
 });
 

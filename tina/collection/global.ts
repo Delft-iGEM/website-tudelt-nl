@@ -1,6 +1,4 @@
 import type { Collection } from "tinacms";
-import { iconSchema } from "../../components/util/icon";
-import { ColorPickerInput } from "../fields/color";
 
 const Global: Collection = {
   label: "Global",
@@ -16,21 +14,6 @@ const Global: Collection = {
       label: "Header",
       name: "header",
       fields: [
-        iconSchema as any,
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-        {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
-          ],
-        },
         {
           type: "object",
           label: "Nav Links",
@@ -66,15 +49,6 @@ const Global: Collection = {
       name: "footer",
       fields: [
         {
-          type: "string",
-          label: "Color",
-          name: "color",
-          options: [
-            { label: "Default", value: "default" },
-            { label: "Primary", value: "primary" },
-          ],
-        },
-        {
           type: "object",
           label: "Social Links",
           name: "social",
@@ -98,61 +72,6 @@ const Global: Collection = {
               type: "string",
               label: "Github",
               name: "github",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: "object",
-      label: "Theme",
-      name: "theme",
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      fields: [
-        {
-          type: "string",
-          label: "Primary Color",
-          name: "color",
-          ui: {
-            component: ColorPickerInput,
-          },
-        },
-        {
-          type: "string",
-          name: "font",
-          label: "Font Family",
-          options: [
-            {
-              label: "System Sans",
-              value: "sans",
-            },
-            {
-              label: "Nunito",
-              value: "nunito",
-            },
-            {
-              label: "Lato",
-              value: "lato",
-            },
-          ],
-        },
-        {
-          type: "string",
-          name: "darkMode",
-          label: "Dark Mode",
-          options: [
-            {
-              label: "System",
-              value: "system",
-            },
-            {
-              label: "Light",
-              value: "light",
-            },
-            {
-              label: "Dark",
-              value: "dark",
             },
           ],
         },

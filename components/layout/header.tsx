@@ -2,14 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Container } from "../util/container";
-import { useTheme } from ".";
-import { Icon } from "../util/icon";
 import { tinaField } from "tinacms/dist/react";
 import { GlobalHeader } from "../../tina/__generated__/types";
 
 export const Header = ({ data }: { data: GlobalHeader }) => {
   const router = useRouter();
-  const theme = useTheme();
 
   const headerColor = {
     default:
@@ -28,7 +25,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
 
   const headerColorCss =
     data.color === "primary"
-      ? headerColor.primary[theme.color]
+      ? headerColor.primary["blue"]
       : headerColor.default;
 
   const activeItemClasses = {
@@ -72,7 +69,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
               href="/"
               className="flex gap-1 items-center whitespace-nowrap tracking-[.002em]"
             >
-              <Icon
+              {/* <Icon
                 tinaField={tinaField(data, "icon")}
                 parentColor={data.color}
                 data={{
@@ -80,7 +77,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                   color: data.icon.color,
                   style: data.icon.style,
                 }}
-              />
+              /> */}
               <span data-tina-field={tinaField(data, "name")}>{data.name}</span>
             </Link>
           </h4>
@@ -94,9 +91,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                 return (
                   <li
                     key={`${item.label}-${i}`}
-                    className={`${
-                      activeItem ? activeItemClasses[theme.color] : ""
-                    }`}
+                    className={`${activeItem ? activeItemClasses["blue"] : ""}`}
                   >
                     <Link
                       data-tina-field={tinaField(item, "label")}
@@ -108,9 +103,7 @@ export const Header = ({ data }: { data: GlobalHeader }) => {
                       {item.label}
                       {activeItem && (
                         <svg
-                          className={`absolute bottom-0 left-1/2 w-[180%] h-full -translate-x-1/2 -z-1 opacity-10 dark:opacity-15 ${
-                            activeBackgroundClasses[theme.color]
-                          }`}
+                          className={`absolute bottom-0 left-1/2 w-[180%] h-full -translate-x-1/2 -z-1 opacity-10 dark:opacity-15 ${activeBackgroundClasses["blue"]}`}
                           preserveAspectRatio="none"
                           viewBox="0 0 230 230"
                           fill="none"
