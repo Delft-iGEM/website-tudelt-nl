@@ -11,13 +11,17 @@ export default function HomePage(
   const { data } = useTina(props);
 
   return (
-    <Layout rawData={data} data={data.global as any}>
+    <Layout data={data.global}>
       <Blocks {...data.page} />
     </Layout>
   );
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({
+  params,
+}: {
+  params: { filename: string };
+}) => {
   const tinaProps = await client.queries.contentQuery({
     relativePath: `${params.filename}.md`,
   });
@@ -33,9 +37,12 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   const pagesListData = await client.queries.pageConnection();
   return {
-    paths: pagesListData.data.pageConnection?.edges?.map((page) => ({
-      params: { filename: page?.node?._sys.filename },
-    })),
+    paths: pagesListData.data.pageConnection?.edges?.map((page) => {
+      const filename = page?.node?._sys.filename;
+      return {
+        params: { filename: filename?.toLowerCase() },
+      };
+    }),
     fallback: false,
   };
 };

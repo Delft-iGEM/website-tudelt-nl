@@ -1,0 +1,14 @@
+{
+  "header": {
+    "nav": [
+      {
+        "href": "home",
+        "label": "Home"
+      },
+      {
+        "href": "/test",
+        "label": "Test"
+      }
+    ]
+  }
+}
