@@ -98,7 +98,7 @@ const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
     return (
       <div>
         <button
-          className="w-full text-left text-white hover:bg-gray-700 px-3 py-2 rounded-md flex justify-between items-center"
+          className="w-full text-left text-white hover:bg-gray-700 px-3 py-2 rounded-md flex items-center"
           onClick={() => setIsOpen(!isOpen)}
         >
           {item.label}
@@ -163,12 +163,30 @@ const Navbar: React.FC<NavbarProps> = ({ logo, links }) => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden mt-2">
-          {links.map((link, index) => (
-            <MobileNavItem key={index} item={link} />
-          ))}
+        <div className="fixed w-full h-full top-0 left-0 z-50">
+          {/* close button */}
+          <div className="absolute right-0 p-4">
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white focus:outline-none"
+            >
+              <X size={24} />
+            </button>
+          </div>
+
+          <div className="bg-gray-700 p-4">
+            {links.map((link, index) => (
+              <MobileNavItem key={index} item={link} />
+            ))}
+          </div>
+
+          {/* overlay */}
+          <div
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="w-full h-full top-0 left-0 bg-black opacity-50"
+          ></div>
         </div>
       )}
     </nav>
