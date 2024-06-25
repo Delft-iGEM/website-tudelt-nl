@@ -64,8 +64,6 @@ Finally, while the nitroplast could significantly reduce the need for nitrogen f
 
 Our project **lays the foundation for the transplantation of nitroplast** into their algal hosts, allowing for the creation of nitrogen-fixing eukaryote strains. The emergence of nitrogen-fixing plants could lead to a significant drop in fertilizer demand, and consequently in both carbon emissions and nitrogen pollution.
 
-![endosymbiosis](/uploadshttps://static.igem.wiki/teams/5054/gif-transparent.gif)
-
 ***
 
 ## References
