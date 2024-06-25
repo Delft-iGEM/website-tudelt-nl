@@ -10,7 +10,7 @@ The Netherlands has been facing a pressing **nitrogen crisis** for several years
 
 ## Nitrogen Crisis in the Netherlands
 
-![Farmer protests in the Netherlands [9].](https://static.igem.wiki/teams/5054/europe-global-fertilizer-and-manure-version-1-nitrogen-in-manure-production-6172666199.jpg)
+![Farmer protests in the Netherlands \[9\].](/uploadshttps://static.igem.wiki/teams/5054/europe-global-fertilizer-and-manure-version-1-nitrogen-in-manure-production-6172666199.jpg)
 
 Figure 1: Nitrogen manure production in kilograms/hectare in the Netherlands in 2010 [\[8\]](#cite8).
 
@@ -22,7 +22,7 @@ In 2022, Dutch agriculture lost 74% (312,000 tons) of the nitrogen it spread as 
 
 Altogether, there is a clear and urgent need for an alternative environmental-friendly solution to the nitrogen problem. This can not only make a huge impact on the Netherlands, but also globally, by enabling a sustainable and food secure future.
 
-![Farmer protests in the Netherlands [9].](https://static.igem.wiki/teams/5054/farmer-protests-in-the-hague-the-netherlands.jpg)
+![Farmer protests in the Netherlands \[9\].](/uploadshttps://static.igem.wiki/teams/5054/farmer-protests-in-the-hague-the-netherlands.jpg)
 
 Figure 2: Farmer protests in the Netherlands [\[9\]](#cite9).
 
@@ -32,7 +32,7 @@ Being a team from the Netherlands, we have actively followed the **unfolding of 
 
 ## Solution
 
-The Nature publication by Coale _et al._ examines UCYN-A, a cyanobacterial species capable of converting N2 into organic nitrogen, and its relationship with the marine algae _Bradurosphera bigelowii_. It has already been established that UCYN-A and _B. bigelowii_ have a symbiotic relationship, where _B. bigelowii_ functions as a so-called host, and has taken up the UCYN-A bacteria into its cell in a process known as endosymbiosis. **The symbiont, UCYN-A, fixes nitrogen for the host** whereas _B. bigelowii_ supplies organic carbon and a conducive living environment. This paper proved that UCYN-A is not a common symbiont, but has instead evolved into a eukaryotic organelle for nitrogen fixation, termed the **"nitroplast"** [\[14\]](#cite14).
+The Nature publication by Coale *et al.* examines UCYN-A, a cyanobacterial species capable of converting N2 into organic nitrogen, and its relationship with the marine algae *Bradurosphera bigelowii*. It has already been established that UCYN-A and *B. bigelowii* have a symbiotic relationship, where *B. bigelowii* functions as a so-called host, and has taken up the UCYN-A bacteria into its cell in a process known as endosymbiosis. **The symbiont, UCYN-A, fixes nitrogen for the host** whereas *B. bigelowii* supplies organic carbon and a conducive living environment. This paper proved that UCYN-A is not a common symbiont, but has instead evolved into a eukaryotic organelle for nitrogen fixation, termed the **"nitroplast"** [\[14\]](#cite14).
 
 The discovery of the nitroplast captured our interest - we had considered a project on nitrogen fixation before but failed to see a way in which we could innovate or propose new solutions to the problems previous teams faced. All diazotrophs (bacteria and archaea that fix atmospheric N2) use the **enzyme nitrogenase** to fix nitrogen, but the expression of this enzyme presents great difficulties: it is **irreversibly damaged by reacting with oxygen**, while at the same time catalyzing an energetically demanding reaction. Due to this, diazotrophs have evolved very complex mechanisms to couple nitrogen fixation with respiration and/or photosynthesis, which so far has been beyond reach in terms of reproduction by synthetic biologists. The **nitroplast solves this problem, acting as a fully contained compartment within a eukaryote where nitrogen fixation takes place**, utilizing millions of years of evolutionary optimization.
 
@@ -40,51 +40,51 @@ Replicating endosymbiosis, while more ambitious than root-bacteria symbiosis, **
 
 We are motivated by the vision of making **the first step of what could be one of the biggest contributions to sustainable agriculture in the not-so-distant future**. We believe that the use of the nitroplast's capabilities could lead to more eco-friendly farming practices and help address some of the pressing challenges associated with current fertilization techniques, both in the Netherlands where there is a major nitrogen crisis, and globally where a growing demand for feed crops clashes with a need to reduce greenhouse emissions. Our project aims to harness the power of this organelle to create a **more sustainable and efficient approach to crop cultivation**, ultimately benefiting both the environment and the agricultural industry.
 
-![FEvolution of the nitroplast from the integration of the endosymbiotic UCYN-A bacteria into a eukaryotic.](https://static.igem.wiki/teams/5054/igemprojectdescriptionfigure1.png)
+![FEvolution of the nitroplast from the integration of the endosymbiotic UCYN-A bacteria into a eukaryotic.](/uploadshttps://static.igem.wiki/teams/5054/igemprojectdescriptionfigure1.png)
 
-Figure 3: Evolution of the nitroplast from the integration of the endosymbiotic UCYN-A bacteria into a eukaryotic _B. bigelowii_ cell [\[14\]](#cite14).
+Figure 3: Evolution of the nitroplast from the integration of the endosymbiotic UCYN-A bacteria into a eukaryotic *B. bigelowii* cell [\[14\]](#cite14).
 
 ## Our approach: NitroBLAST
 
 One promising approach to balance the need for fertilizer and the welfare of the environment, is the development of plants that can fix atmospheric nitrogen independently. This innovation would not only reduce the need for synthetic fertilizers and manure but also help mitigate climate change and the nitrogen crisis. To this end, we need to better study the nitroplast and how it could be introduced into other cells.
 
-![](https://static.igem.wiki/teams/5054/logo-met-tekst-kleur.png)
+![](/uploadshttps://static.igem.wiki/teams/5054/logo-met-tekst-kleur.png)
 
-Studies have demonstrated the insertion of bacteria into cells by engineering endosymbionts in _S. cerevisiae_ using _E. coli_ and _S. elongatus_ [\[15\]](#cite15). Another study successfully inserted _Azotobacter_ strains into _C. reinhardtii_ [\[16\]](#cite16). Building on this research, we aim to **develop a reliable protocol for transplanting a nitroplast** into _C. reinhardtii_ and _S. cerevisiae_, as a **proof-of-concept** for transplantation into other eukaryotes. We will use polyethylene glycol (PEG) fusion protocols, starting out with analogous bacteria to UCYN-A (_Azotobacter_ genus and _Cyanothece_ ATCC51142, the closest free-living relative of UCYN-A).
+Studies have demonstrated the insertion of bacteria into cells by engineering endosymbionts in *S. cerevisiae* using *E. coli* and *S. elongatus* [\[15\]](#cite15). Another study successfully inserted *Azotobacter* strains into *C. reinhardtii* [\[16\]](#cite16). Building on this research, we aim to **develop a reliable protocol for transplanting a nitroplast** into *C. reinhardtii* and *S. cerevisiae*, as a **proof-of-concept** for transplantation into other eukaryotes. We will use polyethylene glycol (PEG) fusion protocols, starting out with analogous bacteria to UCYN-A (*Azotobacter* genus and *Cyanothece* ATCC51142, the closest free-living relative of UCYN-A).
 
-It has been discovered that several essential UCYN-A proteins are expressed in the host, _B. bigelowii_, and imported into the symbiont, not unlike chloroplasts and mitochondria, though to a lesser extent [\[14\]](#cite14). Many of these proteins possess a C-terminal extension known as the “uTP” (UCYN-A Transit Peptide) [\[14\]](#cite14). We first aim to use bioinformatic analysis to identify the characteristic **motifs required for a protein to be imported into UCYN-A**. For this, we will make use of host and nitroplast's genome data as well as the proteomics data published by Coale _et al._.
+It has been discovered that several essential UCYN-A proteins are expressed in the host, *B. bigelowii*, and imported into the symbiont, not unlike chloroplasts and mitochondria, though to a lesser extent [\[14\]](#cite14). Many of these proteins possess a C-terminal extension known as the “uTP” (UCYN-A Transit Peptide) [\[14\]](#cite14). We first aim to use bioinformatic analysis to identify the characteristic **motifs required for a protein to be imported into UCYN-A**. For this, we will make use of host and nitroplast's genome data as well as the proteomics data published by Coale *et al.*.
 
-To understand the functioning of the UCYN-A import mechanism, we will attempt to **identify the proteins involved in translocating** host-encoded proteins into UCYN-A. First, we will locate genes in the host genome which are potentially involved in the translocation based on their similarity to proteins in other import mechanisms such as the _Paulinella chromatophora_ (UCYN-A analogue for photosynthesis) protein import or chaperones that seem analogous to heat-shock proteins. These chaperones are hypothesized to bind to proteins tagged by the uTP and keep them from folding, allowing translocation through the UCYN-A membrane. Following this, we will **obtain the tertiary structure of all candidate proteins** using a structure prediction tool, and use **docking** tools to select ones that are likely to bind the previously identified transit motifs.
+To understand the functioning of the UCYN-A import mechanism, we will attempt to **identify the proteins involved in translocating** host-encoded proteins into UCYN-A. First, we will locate genes in the host genome which are potentially involved in the translocation based on their similarity to proteins in other import mechanisms such as the *Paulinella chromatophora* (UCYN-A analogue for photosynthesis) protein import or chaperones that seem analogous to heat-shock proteins. These chaperones are hypothesized to bind to proteins tagged by the uTP and keep them from folding, allowing translocation through the UCYN-A membrane. Following this, we will **obtain the tertiary structure of all candidate proteins** using a structure prediction tool, and use **docking** tools to select ones that are likely to bind the previously identified transit motifs.
 
-The initial _in vivo_ characterization of the UCYN-A transport system will involve **examining the expression and localization of the UCYN-A transit peptides in the eukaryotic model organisms** _S. cerevisiae_ and _C. reinhardtii_ to test for interference by cellular processes. To this end, uTP-tagged fluorescent proteins will be expressed in _S. cerevisiae_ and _C. reinhardtii_, and the constructs will be confirmed using fluorescence microscopy.
+The initial *in vivo* characterization of the UCYN-A transport system will involve **examining the expression and localization of the UCYN-A transit peptides in the eukaryotic model organisms** *S. cerevisiae* and *C. reinhardtii* to test for interference by cellular processes. To this end, uTP-tagged fluorescent proteins will be expressed in *S. cerevisiae* and *C. reinhardtii*, and the constructs will be confirmed using fluorescence microscopy.
 
-Following up on this, we will **test our candidate chaperone proteins** by expressing them and recreating their interaction with uTP-tagged proteins in our model organisms, in order to demonstrate that the import mechanism can be reproduced outside of _B. bigelowii_. This will involve constructing plasmids to express fluorescently tagged chaperones and observing colocalization with transit peptide-tagged fluorescent proteins.
+Following up on this, we will **test our candidate chaperone proteins** by expressing them and recreating their interaction with uTP-tagged proteins in our model organisms, in order to demonstrate that the import mechanism can be reproduced outside of *B. bigelowii*. This will involve constructing plasmids to express fluorescently tagged chaperones and observing colocalization with transit peptide-tagged fluorescent proteins.
 
 Finally, while the nitroplast could significantly reduce the need for nitrogen fertilizers, it would also consume energy from its host. Although photosynthesis should supply the plant with sufficient energy for nitrogen fixation, this energy expenditure might impact the growth rate or yield of crops. To assess the potential consequences of nitrogen-fixing staple crops, we will use **metabolic models** to predict effects on growth rate, and **economic models** to link crop yields to farmers’ budgets and profits.
 
 Our project **lays the foundation for the transplantation of nitroplast** into their algal hosts, allowing for the creation of nitrogen-fixing eukaryote strains. The emergence of nitrogen-fixing plants could lead to a significant drop in fertilizer demand, and consequently in both carbon emissions and nitrogen pollution.
 
-![endosymbiosis](https://static.igem.wiki/teams/5054/gif-transparent.gif)
+![endosymbiosis](/uploadshttps://static.igem.wiki/teams/5054/gif-transparent.gif)
 
----
+***
 
 ## References
 
-1.  Nitrogen - WUR.
-2.  The nitrogen strategy and the transformation of the rural areas — Nature and biodiversity — Government.nl.
-3.  National Oceanic US Department of Commerce and Atmospheric Administration. What is eutrophication?
-4.  Jeff Elhai. Engineering of crop plants to facilitate bottom-up innovation: A possible role for broad host-range nitroplasts and neoplasts. 4 2023.
-5.  Toename stikstofoverschot in landbouw door droge zomer 2022 — CBS.
-6.  AR4 Climate Change 2007: Mitigation of Climate Change — IPCC.
-7.  Protesting farmers close roads and borders in nationwide campaign - DutchNews.nl.
-8.  Potter, P., and N. Ramankutty, et al. (2010). Global Fertilizer Application and Manure Production.
-9.  The easy guide to the Dutch nitrogen crisis, farmers’ protests, and more - dutchreview.com.
+1. Nitrogen - WUR.
+2. The nitrogen strategy and the transformation of the rural areas — Nature and biodiversity — Government.nl.
+3. National Oceanic US Department of Commerce and Atmospheric Administration. What is eutrophication?
+4. Jeff Elhai. Engineering of crop plants to facilitate bottom-up innovation: A possible role for broad host-range nitroplasts and neoplasts. 4 2023.
+5. Toename stikstofoverschot in landbouw door droge zomer 2022 — CBS.
+6. AR4 Climate Change 2007: Mitigation of Climate Change — IPCC.
+7. Protesting farmers close roads and borders in nationwide campaign - DutchNews.nl.
+8. Potter, P., and N. Ramankutty, et al. (2010). Global Fertilizer Application and Manure Production.
+9. The easy guide to the Dutch nitrogen crisis, farmers’ protests, and more - dutchreview\.com.
 10. Statistics Netherlands. Dutch agricultural exports worth nearly 124 billion euros in 2023. 6 2024. - cbs.nl.
 11. The mission — Mosa meat - mosameat.com.
-12. Team Wageningen 2021 - https://2021.igem.org/Team:Wageningen\_UR.
-13. Team Stony-Brook 2023 - https://2023.igem.wiki/stony-brook/.
-14. Loconte V. Turk-Kubo K.A. Vanslembrouck B. Mak W.K.E. Cheung S. Ekman A. Chen J.H. Hagino K. Takano Y. Coale, T.H. and T. Nishimura. Nitrogen-fixing organelle in a marine alga. Science, 384:217–222, 2024. 6
+12. Team Wageningen 2021 - [https://2021.igem.org/Team:Wageningen\\\_UR](https://2021.igem.org/Team:Wageningen/_UR).
+13. Team Stony-Brook 2023 - [https://2023.igem.wiki/stony-brook/](https://2023.igem.wiki/stony-brook/).
+14. Loconte V. Turk-Kubo K.A. Vanslembrouck B. Mak W\.K.E. Cheung S. Ekman A. Chen J.H. Hagino K. Takano Y. Coale, T.H. and T. Nishimura. Nitrogen-fixing organelle in a marine alga. Science, 384:217–222, 2024. 6
 15. Angad P. Mehta, Lubica Supekova, Jian Hua Chen, Kersi Pestonjamasp, Paul Webster, Yeonjin Ko, Scott C. Henderson, Gerry McDermott, Frantisek Supek, and Peter G. Schultz. Engineering yeast endosymbionts as a step toward the evolution of mitochondria. Proceedings of the National Academy of Sciences of the United States of America, 115(46):11796–11801, 11 2018.
 16. N.H. Nghia, I. Gyurj ́an, P. Stefanovits, GY. Paless, and I. Turt ́oczky. Uptake of Azotobacters by Somatic Fusion of Cell-wall Mutants of Chlamydomonas reinhardii. Biochemie und Physiologie der Pflanzen, 181(5):347–357, 1 1986.
 
----
+***
