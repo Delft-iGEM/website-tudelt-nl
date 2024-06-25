@@ -3,17 +3,7 @@
     "nav": [
       {
         "label": "Home",
-        "href": "home",
-        "children": [
-          {
-            "label": "Child",
-            "href": "child"
-          }
-        ]
-      },
-      {
-        "label": "Test",
-        "href": "/test"
+        "href": "home"
       }
     ]
   }
