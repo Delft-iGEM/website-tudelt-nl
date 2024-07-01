@@ -1,5 +1,4 @@
 import type { Collection } from "tinacms";
-import { contentBlockSchema } from "../../components/blocks/content";
 
 const Page: Collection = {
   label: "Pages",
@@ -28,17 +27,8 @@ const Page: Collection = {
       label: "Body",
       name: "body",
       isBody: true,
+      templates: [],
     },
-    // {
-    //   type: "object",
-    //   list: true,
-    //   name: "blocks",
-    //   label: "Sections",
-    //   ui: {
-    //     visualSelector: true,
-    //   },
-    //   templates: [contentBlockSchema],
-    // },
   ],
 };
 

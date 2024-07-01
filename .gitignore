@@ -27,3 +27,4 @@ yarn-error.log*
 
 .tina/__generated__
 node_modules
+*storybook.log

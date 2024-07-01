@@ -1,6 +1,5 @@
 import React from "react";
 import { InferGetStaticPropsType } from "next";
-// import { Blocks } from "../components/blocks";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../tina/__generated__/client";
 import Layout from "../components/layout/layout";
@@ -16,7 +15,6 @@ export default function HomePage(
       <div className="prose prose-lg dark:prose-dark mx-auto px-6 sm:px-8 py-12 max-w-5xl">
         <TinaMarkdown content={data.page.body} />
       </div>
-      {/* <Blocks {...data.page} /> */}
     </Layout>
   );
 }
