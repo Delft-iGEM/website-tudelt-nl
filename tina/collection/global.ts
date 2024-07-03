@@ -21,9 +21,21 @@ const Global: Collection = {
       required: true,
       fields: [
         {
+          name: "logo",
+          type: "image",
+          label: "Logo",
+        },
+        {
+          name: "recolor",
+          type: "boolean",
+          label: "Recolor Logo",
+          description:
+            "Recolor the logo to match the header color - only works with SVGs",
+        },
+        {
+          name: "nav",
           type: "object",
           label: "Nav Links",
-          name: "nav",
           list: true,
           ui: {
             itemProps: (item) => {

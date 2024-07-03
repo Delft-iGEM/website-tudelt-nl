@@ -1,18 +1,20 @@
-import React, { useRef, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { Popover, Transition } from "@headlessui/react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { GlobalHeaderNav } from "../../tina/__generated__/types";
-import { tinaField } from "tinacms/dist/react";
-import { cn } from "../../lib/cn";
 import { useRouter } from "next/router";
+import React, { useRef, useState } from "react";
+import { tinaField } from "tinacms/dist/react";
+
+import { cn } from "../../lib/cn";
+import { GlobalHeaderNav } from "../../tina/__generated__/types";
 
 interface NavItemProps {
   item: GlobalHeaderNav;
 }
 
 interface NavbarProps {
-  logo?: string | React.ReactNode;
+  logoSrc?: string;
   links: GlobalHeaderNav[];
 }
 
@@ -156,13 +158,22 @@ const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
   );
 };
 
-const Navbar: React.FC<NavbarProps> = ({ links }) => {
+const Navbar: React.FC<NavbarProps> = ({ links, logoSrc }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-green-500 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-xl">TU Delft + iGEM</div>
+    <nav className="h-16 bg-gradient-to-r from-blue-500 to-green-500 ">
+      <div className="container h-full mx-auto flex justify-between items-center">
+        {logoSrc ? (
+          <Image
+            src={logoSrc}
+            alt="Logo"
+            width={200}
+            height={60}
+            style={{ transform: "translateY(-5px)" }}
+            className="fill-black"
+          />
+        ) : null}
 
         {/* Desktop menu */}
         <div className="hidden md:flex space-x-4 gap-4">
