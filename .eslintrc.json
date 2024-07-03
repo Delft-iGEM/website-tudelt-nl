@@ -1,7 +1,20 @@
 {
-    "extends": [
-        "eslint:recommended",
-        "next",
-        "plugin:storybook/recommended"
-    ]
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": true,
+    "tsconfigRootDir": "."
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "plugin:storybook/recommended",
+    "plugin:@typescript-eslint/recommended-type-checked"
+  ],
+  "rules": {
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off"
+  },
+  "root": true
 }

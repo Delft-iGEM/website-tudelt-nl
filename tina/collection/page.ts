@@ -1,15 +1,19 @@
 import type { Collection } from "tinacms";
+import { templates } from "../../components/templates";
 
 const Page: Collection = {
   label: "Pages",
   name: "page",
   path: "content/pages",
+  format: "mdx",
   ui: {
-    router: ({ document }) => {
-      if (document._sys.filename === "home") {
-        return `/`;
-      }
-      return undefined;
+    router: ({ document }) => `${document._sys.filename}`,
+    filename: {
+      readonly: true,
+      slugify: (values) =>
+        values.title
+          ? `${(values.title as string).toLowerCase().replace(/\s+/g, "-")}`
+          : "new-page",
     },
   },
   fields: [
@@ -27,7 +31,7 @@ const Page: Collection = {
       label: "Body",
       name: "body",
       isBody: true,
-      templates: [],
+      templates,
     },
   ],
 };

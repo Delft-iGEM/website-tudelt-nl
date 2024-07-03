@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import Navbar from "./navbar";
 // import { Footer } from "./footer";
-// import layoutData from "../../content/global/index.json";
 import { Global, GlobalHeaderNav } from "../../tina/__generated__/types";
 
 export default function Layout({
@@ -12,6 +11,7 @@ export default function Layout({
   data: Omit<Global, "id" | "_sys" | "_values">;
   children: React.ReactNode;
 }) {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   const navLinks = (data.header?.nav ?? []).filter(
     (nav) => nav !== null
   ) as GlobalHeaderNav[];

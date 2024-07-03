@@ -11,12 +11,14 @@ const Global: Collection = {
       create: false,
       delete: false,
     },
+    router: () => "/",
   },
   fields: [
     {
       type: "object",
       label: "Header",
       name: "header",
+      required: true,
       fields: [
         {
           type: "object",
@@ -26,10 +28,6 @@ const Global: Collection = {
           ui: {
             itemProps: (item) => {
               return { label: item?.label };
-            },
-            defaultItem: {
-              href: "home",
-              label: "Home",
             },
           },
           fields: [
@@ -43,7 +41,6 @@ const Global: Collection = {
               type: "string",
               label: "Link",
               name: "href",
-              required: true,
             },
             {
               type: "object",
@@ -53,10 +50,6 @@ const Global: Collection = {
               ui: {
                 itemProps: (item) => {
                   return { label: item?.label };
-                },
-                defaultItem: {
-                  href: "child",
-                  label: "Child",
                 },
               },
               fields: [
@@ -78,40 +71,40 @@ const Global: Collection = {
         },
       ],
     },
-    {
-      type: "object",
-      label: "Footer",
-      name: "footer",
-      fields: [
-        {
-          type: "object",
-          label: "Social Links",
-          name: "social",
-          fields: [
-            {
-              type: "string",
-              label: "Facebook",
-              name: "facebook",
-            },
-            {
-              type: "string",
-              label: "Twitter",
-              name: "twitter",
-            },
-            {
-              type: "string",
-              label: "Instagram",
-              name: "instagram",
-            },
-            {
-              type: "string",
-              label: "Github",
-              name: "github",
-            },
-          ],
-        },
-      ],
-    },
+    // {
+    //   type: "object",
+    //   label: "Footer",
+    //   name: "footer",
+    //   fields: [
+    //     {
+    //       type: "object",
+    //       label: "Social Links",
+    //       name: "social",
+    //       fields: [
+    //         {
+    //           type: "string",
+    //           label: "Facebook",
+    //           name: "facebook",
+    //         },
+    //         {
+    //           type: "string",
+    //           label: "Twitter",
+    //           name: "twitter",
+    //         },
+    //         {
+    //           type: "string",
+    //           label: "Instagram",
+    //           name: "instagram",
+    //         },
+    //         {
+    //           type: "string",
+    //           label: "Github",
+    //           name: "github",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
   ],
 };
 

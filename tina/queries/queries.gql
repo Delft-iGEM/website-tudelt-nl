@@ -4,3 +4,10 @@ query contentQuery($relativePath: String!) {
     ...PageParts
   }
 }
+
+query homeQuery {
+  ...LayoutQueryFragment
+  home(relativePath: "index.json") {
+    ...HomeParts
+  }
+}

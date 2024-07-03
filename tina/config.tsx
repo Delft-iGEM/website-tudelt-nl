@@ -2,6 +2,7 @@ import { defineConfig } from "tinacms";
 
 import Global from "./collection/global";
 import Page from "./collection/page";
+import HomePage from "./collection/home";
 
 const config = defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
@@ -28,7 +29,7 @@ const config = defineConfig({
     outputFolder: "admin", // within the public folder
   },
   schema: {
-    collections: [Global, Page],
+    collections: [Global, Page, HomePage],
   },
 });
 

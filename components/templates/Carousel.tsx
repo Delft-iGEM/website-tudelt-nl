@@ -7,6 +7,8 @@ import React, {
 } from "react";
 import useEmblaCarousel, { UseEmblaCarouselType } from "embla-carousel-react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import { Template } from "tinacms";
+import HeroImage from "./HeroImage";
 
 const Carousel: FC<PropsWithChildren> = ({ children }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
@@ -79,3 +81,50 @@ const Carousel: FC<PropsWithChildren> = ({ children }) => {
 };
 
 export default Carousel;
+
+type HeroImageCarouselProps = Omit<
+  React.ComponentProps<typeof HeroImage>,
+  "imageUrl" | "text"
+> & {
+  slides?: { imageUrl: string; text?: string }[];
+};
+
+export const HeroImageCarousel: FC<HeroImageCarouselProps> = ({
+  slides = [],
+  ...props
+}) => {
+  return (
+    <Carousel>
+      {slides.map((slide, index) => (
+        <HeroImage key={index} {...{ ...props, ...slide }} />
+      ))}
+    </Carousel>
+  );
+};
+
+export const HeroImageCarouselTemplate: Template = {
+  name: "HeroImageCarousel",
+  label: "Hero Image Carousel",
+  fields: [
+    {
+      name: "slides",
+      label: "Slides",
+      type: "object",
+      required: true,
+      list: true,
+      fields: [
+        {
+          name: "imageUrl",
+          label: "Image",
+          type: "image",
+          required: true,
+        },
+        {
+          name: "text",
+          label: "Text",
+          type: "string",
+        },
+      ],
+    },
+  ],
+};
