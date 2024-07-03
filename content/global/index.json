@@ -4,6 +4,20 @@
       {
         "label": "Home",
         "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "",
+        "children": [
+          {
+            "label": "Test 2",
+            "href": "/asd"
+          },
+          {
+            "label": "Test 1",
+            "href": "/asd"
+          }
+        ]
       }
     ]
   }

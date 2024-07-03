@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Popover, Transition } from "@headlessui/react";
+import Link from "next/link";
 import { GlobalHeaderNav } from "../../tina/__generated__/types";
 import { tinaField } from "tinacms/dist/react";
+import { cn } from "../../lib/cn";
+import { useRouter } from "next/router";
 
 interface NavItemProps {
   item: GlobalHeaderNav;
@@ -16,6 +19,7 @@ interface NavbarProps {
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<number | null>(null);
+  const router = useRouter();
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -36,14 +40,16 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
         {() => (
           <>
             <Popover.Button
-              className="flex items-center text-white hover:text-gray-300 focus:outline-none"
+              className="flex items-center text-white font-bold hover:text-opacity-50 focus:outline-none"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
               {item.label}
               <ChevronDown className="ml-1 h-4 w-4" />
             </Popover.Button>
+
             <Transition
+              className="absolute z-20"
               show={isOpen}
               enter="transition ease-out duration-100"
               enterFrom="transform opacity-0 scale-95"
@@ -54,21 +60,24 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
             >
               <Popover.Panel
                 static
-                className="absolute z-10 w-40 mt-2 bg-white shadow-lg"
+                className="w-40 mt-2  bg-green-500 rounded shadow-lg"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="py-1">
                   {item.children?.map((child, index) =>
                     child !== null ? (
-                      <a
+                      <Link
                         data-tina-field={tinaField(child, "label")}
                         key={index}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className={cn(
+                          "block px-4 py-2 text-sm text-white font-bold hover:text-opacity-50",
+                          router.asPath === child.href && "text-opacity-50"
+                        )}
                       >
                         {child.label}
-                      </a>
+                      </Link>
                     ) : null
                   )}
                 </div>
@@ -81,24 +90,28 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
   }
 
   return (
-    <a
+    <Link
       data-tina-field={tinaField(item, "label")}
-      href={item.href}
-      className="text-white hover:text-gray-300"
+      href={item.href || "#"}
+      className={cn(
+        "text-white font-bold hover:text-opacity-50",
+        router.asPath === item.href && "text-opacity-50"
+      )}
     >
       {item.label}
-    </a>
+    </Link>
   );
 };
 
 const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   if (item.children) {
     return (
       <div>
         <button
-          className="w-full text-left text-white hover:bg-gray-700 px-3 py-2 rounded-md flex items-center"
+          className="w-full text-left text-white font-bold px-3 py-2 rounded-md flex items-center"
           onClick={() => setIsOpen(!isOpen)}
         >
           {item.label}
@@ -110,14 +123,17 @@ const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
           <div className="pl-4">
             {item.children.map((child, index) =>
               child !== null ? (
-                <a
+                <Link
                   data-tina-field={tinaField(child, "label")}
                   key={index}
                   href={child.href}
-                  className="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+                  className={cn(
+                    "block text-white font-bold px-3 py-2 rounded-md",
+                    router.asPath === child.href && "text-opacity-50"
+                  )}
                 >
                   {child.label}
-                </a>
+                </Link>
               ) : null
             )}
           </div>
@@ -127,26 +143,29 @@ const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
   }
 
   return (
-    <a
+    <Link
       data-tina-field={tinaField(item, "label")}
-      href={item.href}
-      className="block text-white hover:bg-gray-700 px-3 py-2 rounded-md"
+      href={item.href || "#"}
+      className={cn(
+        "block text-white font-bold  px-3 py-2 rounded-md",
+        router.asPath === item.href && "text-opacity-50"
+      )}
     >
       {item.label}
-    </a>
+    </Link>
   );
 };
 
-const Navbar: React.FC<NavbarProps> = ({ logo, links }) => {
+const Navbar: React.FC<NavbarProps> = ({ links }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-gradient-to-r from-blue-500 to-green-500 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-xl">{logo}</div>
+        <div className="text-white font-bold text-xl">TU Delft + iGEM</div>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden md:flex space-x-4 gap-4">
           {links.map((link, index) => (
             <NavItem key={index} item={link} />
           ))}
@@ -176,7 +195,7 @@ const Navbar: React.FC<NavbarProps> = ({ logo, links }) => {
             </button>
           </div>
 
-          <div className="bg-gray-700 p-4">
+          <div className="bg-gradient-to-r from-blue-500 to-green-500 p-4">
             {links.map((link, index) => (
               <MobileNavItem key={index} item={link} />
             ))}
