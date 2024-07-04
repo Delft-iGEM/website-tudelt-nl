@@ -24,3 +24,11 @@ export const WithOffset: Story = {
     offset: { y: -25 },
   },
 };
+
+export const WithFade: Story = {
+  args: {
+    imageUrl: img.src,
+    text: "Hero Image",
+    fadeBottom: true,
+  },
+};

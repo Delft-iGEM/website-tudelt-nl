@@ -7,10 +7,18 @@ import React, {
 } from "react";
 import useEmblaCarousel, { UseEmblaCarouselType } from "embla-carousel-react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import { Template } from "tinacms";
-import HeroImage from "./HeroImage";
+import { cn } from "../../lib/cn";
 
-const Carousel: FC<PropsWithChildren> = ({ children }) => {
+export interface CarouselProps {
+  className?: string;
+  buttonClassName?: string;
+}
+
+const Carousel: FC<PropsWithChildren<CarouselProps>> = ({
+  children,
+  className,
+  buttonClassName,
+}) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
   const [visibleSlides, setVisibleSlides] = useState<number>(0);
@@ -39,7 +47,7 @@ const Carousel: FC<PropsWithChildren> = ({ children }) => {
   const totalSlides = Array.isArray(children) ? children.length : 1;
 
   return (
-    <div>
+    <div className={className}>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {React.Children.map(children, (child) => (
@@ -52,7 +60,9 @@ const Carousel: FC<PropsWithChildren> = ({ children }) => {
 
       <div className="w-full flex justify-center mt-2">
         <button className="hover:bg-gray-300 rounded-md" onClick={scrollPrev}>
-          <ChevronLeft className="dark:stroke-white" />
+          <ChevronLeft
+            className={cn("stroke-black dark:stroke-white", buttonClassName)}
+          />
         </button>
 
         <div className="mx-2">
@@ -73,7 +83,9 @@ const Carousel: FC<PropsWithChildren> = ({ children }) => {
         </div>
 
         <button className="hover:bg-gray-300 rounded-md" onClick={scrollNext}>
-          <ChevronRight className="dark:stroke-white" />
+          <ChevronRight
+            className={cn("stroke-black dark:stroke-white", buttonClassName)}
+          />
         </button>
       </div>
     </div>
@@ -81,50 +93,3 @@ const Carousel: FC<PropsWithChildren> = ({ children }) => {
 };
 
 export default Carousel;
-
-type HeroImageCarouselProps = Omit<
-  React.ComponentProps<typeof HeroImage>,
-  "imageUrl" | "text"
-> & {
-  slides?: { imageUrl: string; text?: string }[];
-};
-
-export const HeroImageCarousel: FC<HeroImageCarouselProps> = ({
-  slides = [],
-  ...props
-}) => {
-  return (
-    <Carousel>
-      {slides.map((slide, index) => (
-        <HeroImage key={index} {...{ ...props, ...slide }} />
-      ))}
-    </Carousel>
-  );
-};
-
-export const HeroImageCarouselTemplate: Template = {
-  name: "HeroImageCarousel",
-  label: "Hero Image Carousel",
-  fields: [
-    {
-      name: "slides",
-      label: "Slides",
-      type: "object",
-      required: true,
-      list: true,
-      fields: [
-        {
-          name: "imageUrl",
-          label: "Image",
-          type: "image",
-          required: true,
-        },
-        {
-          name: "text",
-          label: "Text",
-          type: "string",
-        },
-      ],
-    },
-  ],
-};

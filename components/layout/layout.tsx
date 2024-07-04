@@ -24,7 +24,7 @@ export default function Layout({
       </Head>
       <>
         <div>
-          <Navbar logoSrc={data.header.logo} links={navLinks} />
+          <Navbar logoSrc={data.header.logo ?? undefined} links={navLinks} />
 
           <div className="flex-1 text-gray-800 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000 flex flex-col">
             {children}

@@ -16,5 +16,14 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-unsafe-assignment": "off"
   },
-  "root": true
+  "root": true,
+  "ignorePatterns": [
+    "node_modules",
+    ".next",
+    "out",
+    "tailwind.config.js",
+    "next.config.js",
+    "postcss.config.js",
+    "graphql.config.js"
+  ]
 }

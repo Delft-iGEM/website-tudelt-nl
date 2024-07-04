@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
+import { cn } from "../../lib/cn";
 
 export interface HeroImageProps {
   imageUrl: string;
@@ -9,6 +10,8 @@ export interface HeroImageProps {
   text?: string;
   textColor?: "light" | "dark";
   offset?: Partial<{ x: number; y: number }>;
+  fadeBottom?: boolean;
+  fadeClassName?: string;
 }
 
 const HeroImage: FC<HeroImageProps> = (props) => {
@@ -19,6 +22,8 @@ const HeroImage: FC<HeroImageProps> = (props) => {
     textColor = "light",
     text = "",
     offset = { x: 0, y: 0 },
+    fadeBottom = false,
+    fadeClassName = "bg-white dark:bg-gray-800",
   } = props;
 
   const textAlignment = textPosition === "center" ? "text-center" : "text-left";
@@ -30,8 +35,11 @@ const HeroImage: FC<HeroImageProps> = (props) => {
 
   return (
     <div
-      className={`w-full relative bg-cover bg-no-repeat ${height}`}
-      style={{ backgroundImage: `url(${imageUrl})`, backgroundPosition }}
+      className={cn("w-full relative bg-cover bg-no-repeat", height)}
+      style={{
+        background: `url(${imageUrl})`,
+        backgroundPosition,
+      }}
     >
       {text && (
         <div
@@ -45,6 +53,16 @@ const HeroImage: FC<HeroImageProps> = (props) => {
           </h1>
         </div>
       )}
+
+      {fadeBottom ? (
+        <div
+          className={cn(
+            "absolute inset-x-0 bottom-0 h-[30%]",
+            "bg-gradient-to-t from-white to-transparent",
+            fadeClassName
+          )}
+        ></div>
+      ) : null}
     </div>
   );
 };
