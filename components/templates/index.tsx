@@ -1,18 +1,15 @@
 import { Template } from "tinacms";
 import HeroImage, { HeroImageProps, HeroImageTemplate } from "./HeroImage";
-import { HeroImageCarousel, HeroImageCarouselTemplate } from "./Carousel";
+import IgemHero, { IgemHeroTemplate } from "./IgemHero";
 import { HomeBlocks } from "../../tina/__generated__/types";
 import { FC } from "react";
 import { replaceNullWithUndefined } from "../../lib/tsUtils";
 
-export const templates: Template[] = [
-  HeroImageTemplate,
-  HeroImageCarouselTemplate,
-];
+export const templates: Template[] = [HeroImageTemplate, IgemHeroTemplate];
 
 export const templateComponents = {
   HeroImage,
-  HeroImageCarousel,
+  IgemHero,
 };
 
 export const Blocks: FC<{ blocks: HomeBlocks[] }> = ({ blocks }) => {
@@ -25,9 +22,9 @@ export const Blocks: FC<{ blocks: HomeBlocks[] }> = ({ blocks }) => {
           case "HomeBlocksHeroImage": {
             return <HeroImage key={index} {...(block as HeroImageProps)} />;
           }
-          case "HomeBlocksHeroImageCarousel": {
+          case "HomeBlocksIgemHero": {
             if (!block.slides) return null;
-            return <HeroImageCarousel key={index} {...block} />;
+            return <IgemHero key={index} {...block} />;
           }
         }
       })}
