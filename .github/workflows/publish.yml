@@ -84,9 +84,9 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          # Automatically inject basePath in your Next.js configuration file.
-          static_site_generator: next
+        # with:
+        #   # Automatically inject basePath in your Next.js configuration file.
+        #   static_site_generator: next
       # - name: Inject basePath into tina configuration
       #   run: |
       #     # Replace "build: {" with "build: { basePath: '/delft-igem.github.io/website-tudelt-nl',"
