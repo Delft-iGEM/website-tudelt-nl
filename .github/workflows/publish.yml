@@ -22,55 +22,55 @@ env:
   TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
   NEXT_PUBLIC_TINA_BRANCH: ${{ github.head_ref }}
 jobs:
-  build-deploy-tudelft:
-    runs-on: ubuntu-latest
-    name: Build and deploy to tudelft.nl
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.17.0
+  # build-deploy-tudelft:
+  #   runs-on: ubuntu-latest
+  #   name: Build and deploy to tudelft.nl
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Setup node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18.17.0
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+  #     - name: Restore cache
+  #       uses: actions/cache@v4
+  #       with:
+  #         path: |
+  #           .next/cache
+  #         # Generate a new cache whenever packages or source files change.
+  #         key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+  #         # If source files changed but packages didn't, rebuild from a prior cache.
+  #         restore-keys: |
+  #           ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
-      - run: npm install
-      - run: npm run build
+  #     - run: npm install
+  #     - run: npm run build
 
-      - name: Push to igem.tnw.tudelft.nl
-        env:
-          DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
-        run: |
-          if [ -z "$DEPLOY_PASSWORD" ]; then
-            echo "DEPLOY_PASSWORD is not set."
-            exit 1
-          fi
+  #     - name: Push to igem.tnw.tudelft.nl
+  #       env:
+  #         DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
+  #       run: |
+  #         if [ -z "$DEPLOY_PASSWORD" ]; then
+  #           echo "DEPLOY_PASSWORD is not set."
+  #           exit 1
+  #         fi
 
-          git config --global user.email "igem@tudelft.nl"
-          git config --global user.name "igem.tnw"
+  #         git config --global user.email "igem@tudelft.nl"
+  #         git config --global user.name "igem.tnw"
 
-          # https://igem.tnw@igem.tnw.tudelft.nl/plesk-git/igem.git
-          echo "https://igem.tnw:$DEPLOY_PASSWORD@igem.tnw.tudelft.nl" >> ~/.git-credentials
-          git config --global credential.helper 'store --file ~/.git-credentials'
+  #         # https://igem.tnw@igem.tnw.tudelft.nl/plesk-git/igem.git
+  #         echo "https://igem.tnw:$DEPLOY_PASSWORD@igem.tnw.tudelft.nl" >> ~/.git-credentials
+  #         git config --global credential.helper 'store --file ~/.git-credentials'
 
-          cd out
-          rm ./**/.gitignore
-          git init
-          git add .
-          git commit -m "Deploy to igem.tnw.tudelft.nl"
-          git remote add origin https://igem.tnw:$DEPLOY_PASSWORD@igem.tnw.tudelft.nl/plesk-git/igem.git
-          git push --force origin master
+  #         cd out
+  #         rm ./**/.gitignore
+  #         git init
+  #         git add .
+  #         git commit -m "Deploy to igem.tnw.tudelft.nl"
+  #         git remote add origin https://igem.tnw:$DEPLOY_PASSWORD@igem.tnw.tudelft.nl/plesk-git/igem.git
+  #         git push --force origin master
 
-          echo "Deployed to igem.tnw.tudelft.nl"
+  #         echo "Deployed to igem.tnw.tudelft.nl"
 
   build-gh-pages:
     runs-on: ubuntu-latest
