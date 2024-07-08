@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="120" version="1.1" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+       &gt;
+ <style>text { font: 32px sans-serif; fill: #185a4f; font-weight: bold; }
+              .cell { fill: none; }</style>
+ <rect class="cell" width="100" height="30" />
+ <text x="50"
+              y="15" dominant-baseline="central" font-family="sans-serif" font-size="16px"
+              text-anchor="middle" style="line-height:normal">2008</text>
+ <rect class="cell" x="100"
+              width="100" height="30" />
+ <text x="150" y="15" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2009</text>
+ <rect class="cell" x="200" width="100"
+              height="30" />
+ <text x="250" y="15" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2010</text>
+ <rect class="cell" x="300" width="100"
+              height="30" />
+ <text x="350" y="15" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2011</text>
+ <rect class="cell" y="30" width="100"
+              height="30" />
+ <text x="50" y="45" dominant-baseline="central" font-family="sans-serif"
+              font-size="16px" text-anchor="middle" style="line-height:normal">2012</text>
+ <rect
+              class="cell" x="100" y="30" width="100" height="30" />
+ <text x="150" y="45"
+              dominant-baseline="central" font-family="sans-serif" font-size="16px"
+              text-anchor="middle" style="line-height:normal">2013</text>
+ <rect class="cell" x="200"
+              y="30" width="100" height="30" />
+ <text x="250" y="45" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2014</text>
+ <rect class="cell" x="300" y="30" width="100"
+              height="30" />
+ <text x="350" y="45" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2015</text>
+ <rect class="cell" y="60" width="100"
+              height="30" />
+ <text x="50" y="75" dominant-baseline="central" font-family="sans-serif"
+              font-size="16px" text-anchor="middle" style="line-height:normal">2016</text>
+ <rect
+              class="cell" x="100" y="60" width="100" height="30" />
+ <text x="150" y="75"
+              dominant-baseline="central" font-family="sans-serif" font-size="16px"
+              text-anchor="middle" style="line-height:normal">2017</text>
+ <rect class="cell" x="200"
+              y="60" width="100" height="30" />
+ <text x="250" y="75" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2018</text>
+ <rect class="cell" x="300" y="60" width="100"
+              height="30" />
+ <text x="350" y="75" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2019</text>
+ <rect class="cell" y="90" width="100"
+              height="30" />
+ <text x="50" y="105" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2020</text>
+ <rect class="cell" x="100" y="90" width="100"
+              height="30" />
+ <text x="150" y="105" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2021</text>
+ <rect class="cell" x="200" y="90" width="100"
+              height="30" />
+ <text x="250" y="105" dominant-baseline="central"
+              font-family="sans-serif" font-size="16px" text-anchor="middle"
+              style="line-height:normal">2022</text>
+</svg>

@@ -16,6 +16,20 @@
         }
       ],
       "_template": "IgemHero"
+    },
+    {
+      "graphic": "/uploads/brick_opt.svg",
+      "title": "A History of Success",
+      "body": "TU Delft has been participating in iGEM since 2008 - 17 years! There has hardly been a year when the university team did not take home several awards, including the Grand Prize on several occasions!\n",
+      "alignment": "left",
+      "_template": "SectionWithGraphic"
+    },
+    {
+      "graphic": "/uploads/logo-met-tekst-kleur.png",
+      "title": "Taking up the Mantle",
+      "body": "Our team continues this long tradition this year with our project: NitroBLAST!\n",
+      "alignment": "right",
+      "_template": "SectionWithGraphic"
     }
   ]
 }

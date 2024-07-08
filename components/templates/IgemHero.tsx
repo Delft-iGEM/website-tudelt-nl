@@ -6,10 +6,11 @@ import Carousel from "./Carousel";
 import { Template, wrapFieldsWithMeta } from "tinacms";
 import VectorWave1 from "../../assets/img/vector-wave-1.svg";
 import VectorGear from "../../assets/img/igem_gear.svg";
-import VectorMedal from "../../assets/img/medal.svg";
-import VectorCup from "../../assets/img/cup.svg";
-import VectorBrick from "../../assets/img/brick.svg";
+// import VectorMedal from "../../assets/img/medal.svg";
+// import VectorCup from "../../assets/img/cup.svg";
+// import VectorBrick from "../../assets/img/brick.svg";
 import { cn } from "../../lib/cn";
+import { tinaField } from "tinacms/dist/react";
 
 // type Award = "Gold" | "Silver" | "Bronze" | "Grand Prize" | "Prize";
 type Award =
@@ -57,10 +58,16 @@ const IgemHero: FC<IgemHeroProps> = ({ slides = [], ...props }) => {
                   <div></div>
 
                   <div className="flex flex-col gap-4">
-                    <h1 className="font-bold text-4xl md:text-8xl text-white text-center">
+                    <h1
+                      className="font-bold text-4xl md:text-8xl text-white text-center"
+                      data-tina-field={tinaField(slide, "title")}
+                    >
                       {slide.title}
                     </h1>
-                    <h2 className="text-3xl md:text-4xl text-white text-center">
+                    <h2
+                      className="text-3xl md:text-4xl text-white text-center"
+                      data-tina-field={tinaField(slide, "subtitle")}
+                    >
                       {slide.subtitle}
                     </h2>
                   </div>
