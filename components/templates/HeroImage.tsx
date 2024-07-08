@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { cn } from "../../lib/cn";
@@ -6,7 +6,7 @@ import { cn } from "../../lib/cn";
 export interface HeroImageProps {
   imageUrl: string;
   height?: string;
-  textPosition?: "center" | "left";
+  textPosition?: "center" | "left" | "center-bottom";
   text?: string;
   textColor?: "light" | "dark";
   offset?: Partial<{ x: number; y: number }>;
@@ -14,7 +14,7 @@ export interface HeroImageProps {
   fadeClassName?: string;
 }
 
-const HeroImage: FC<HeroImageProps> = (props) => {
+const HeroImage: FC<PropsWithChildren<HeroImageProps>> = (props) => {
   const {
     imageUrl,
     height = "h-96",
@@ -24,9 +24,15 @@ const HeroImage: FC<HeroImageProps> = (props) => {
     offset = { x: 0, y: 0 },
     fadeBottom = false,
     fadeClassName = "bg-white dark:bg-gray-800",
+    children,
   } = props;
 
-  const textAlignment = textPosition === "center" ? "text-center" : "text-left";
+  const textAlignment =
+    textPosition === "center"
+      ? "items-center justify-center"
+      : textPosition === "center-bottom"
+      ? "items-end justify-center"
+      : "items-start justify-start";
   const textColorClass = textColor === "light" ? "text-white" : "text-black";
 
   const bgX = 50 + (offset.x ?? 0);
@@ -37,14 +43,12 @@ const HeroImage: FC<HeroImageProps> = (props) => {
     <div
       className={cn("w-full relative bg-cover bg-no-repeat", height)}
       style={{
-        background: `url(${imageUrl})`,
+        backgroundImage: `url("${imageUrl}")`,
         backgroundPosition,
       }}
     >
-      {text && (
-        <div
-          className={`absolute inset-0 flex items-center justify-center ${textAlignment}`}
-        >
+      {text && text.length > 0 ? (
+        <div className={`absolute inset-0 flex ${textAlignment}`}>
           <h1
             className={`text-4xl font-bold ${textColorClass}`}
             data-tina-field={tinaField(props, "text")}
@@ -52,7 +56,9 @@ const HeroImage: FC<HeroImageProps> = (props) => {
             {text}
           </h1>
         </div>
-      )}
+      ) : null}
+
+      {children}
 
       {fadeBottom ? (
         <div

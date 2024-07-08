@@ -171,7 +171,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, logoSrc }) => {
             width={200}
             height={60}
             style={{ transform: "translateY(-5px)" }}
-            className="fill-black"
+            className="fill-black ml-4"
           />
         ) : null}
 
@@ -183,7 +183,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, logoSrc }) => {
         </div>
 
         {/* Mobile menu button */}
-        <div className="md:hidden">
+        <div className="md:hidden mr-4">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white focus:outline-none"

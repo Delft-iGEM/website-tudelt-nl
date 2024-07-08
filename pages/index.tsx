@@ -9,7 +9,7 @@ export default function HomePage(
 ) {
   const { data } = useTina(props);
   return (
-    <Layout data={data.global}>
+    <Layout data={data.global} className="bg-accent-lighter">
       <Blocks blocks={data.home.blocks} />
     </Layout>
   );

@@ -1,54 +1,100 @@
-import { FC, useEffect, useState } from "react";
+"use client";
+
+import React, { FC, useState } from "react";
 import HeroImage from "./HeroImage";
 import Carousel from "./Carousel";
-import { Template } from "tinacms";
+import { Template, wrapFieldsWithMeta } from "tinacms";
 import VectorWave1 from "../../assets/img/vector-wave-1.svg";
 import VectorGear from "../../assets/img/igem_gear.svg";
+import VectorMedal from "../../assets/img/medal.svg";
+import VectorCup from "../../assets/img/cup.svg";
+import VectorBrick from "../../assets/img/brick.svg";
 import { cn } from "../../lib/cn";
+
+// type Award = "Gold" | "Silver" | "Bronze" | "Grand Prize" | "Prize";
+type Award =
+  | { type: "Gold" }
+  | { type: "Silver" }
+  | { type: "Bronze" }
+  | { type: "Grand Prize" }
+  | { type: "Prize"; category: string };
+
+type Slide = {
+  imageUrl: string;
+  title?: string;
+  subtitle?: string;
+  offsetX?: number;
+  offsetY?: number;
+  awards?: Award[];
+};
 
 type IgemHeroProps = Omit<
   React.ComponentProps<typeof HeroImage>,
-  "imageUrl" | "text"
+  "imageUrl" | "text" | "offset"
 > & {
-  slides?: { imageUrl: string; text?: string }[];
+  slides?: Slide[];
 };
 
 const IgemHero: FC<IgemHeroProps> = ({ slides = [], ...props }) => {
   return (
     <div className="w-full">
-      <div className="relative w-full bg-accent-dark overflow-hidden">
+      <div className="relative w-full bg-accent-dark">
         <Carousel className="dark">
           {slides.map((slide, index) => (
             <HeroImage
               key={index}
               {...{ ...props, ...slide }}
+              offset={{ x: slide.offsetX, y: slide.offsetY }}
+              height="h-[70vh]"
               fadeBottom
               fadeClassName="from-accent-dark"
-            />
+            >
+              <div className="w-full h-full flex justify-center pb-44">
+                <div className="w-full grid grid-cols-[1fr,max-content,1fr] gap-4 items-end">
+                  {/* <div className="flex justify-end items-center">
+                    <VectorCup className="w-24 text-yellow-300" />
+                  </div> */}
+                  <div></div>
+
+                  <div className="flex flex-col gap-4">
+                    <h1 className="font-bold text-4xl md:text-8xl text-white text-center">
+                      {slide.title}
+                    </h1>
+                    <h2 className="text-3xl md:text-4xl text-white text-center">
+                      {slide.subtitle}
+                    </h2>
+                  </div>
+
+                  <div></div>
+                </div>
+              </div>
+            </HeroImage>
           ))}
         </Carousel>
 
-        <GearAnimation
-          animation="stutter-turn"
-          className={
-            "absolute top-[70px] right-[-30px] md:top-0 md:right-[200px] transform translate-x-1/2 -translate-y-1/2"
-          }
-          svgClassName="text-accent-dark w-[200px]"
-        />
-        <GearAnimation
-          animation="stutter-turn"
-          className={
-            "absolute top-[-30px] right-[80px] md:right-0 md:top-[150px] transform translate-x-1/2 -translate-y-1/2"
-          }
-          svgClassName="text-green-600 w-[250px]"
-        />
-        <GearAnimation
-          animation="slow-spin"
-          className={
-            "absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2"
-          }
-          svgClassName="text-accent-light w-[350px]"
-        />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <GearAnimation
+            animation="stutter-turn"
+            className={
+              "absolute top-[70px] right-[-30px] md:top-0 md:right-[300px] transform translate-x-1/2 -translate-y-1/2"
+            }
+            svgClassName="text-accent-dark w-[200px]"
+          />
+          <GearAnimation
+            animation="stutter-turn"
+            className={
+              "absolute top-[-30px] right-[80px] md:right-0 md:top-[250px] transform translate-x-1/2 -translate-y-1/2"
+            }
+            svgClassName="text-green-600 w-[250px]"
+          />
+          <GearAnimation
+            animation="slow-spin"
+            className={
+              "absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 md:translate-x-1/3 md:-translate-y-1/3"
+            }
+            svgClassName="text-accent-light w-[350px]"
+          />
+        </div>
 
         <GearAnimation
           animation="slow-spin"
@@ -89,6 +135,11 @@ export const IgemHeroTemplate: Template = {
       type: "object",
       required: true,
       list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.title };
+        },
+      },
       fields: [
         {
           name: "imageUrl",
@@ -97,133 +148,184 @@ export const IgemHeroTemplate: Template = {
           required: true,
         },
         {
-          name: "text",
-          label: "Text",
+          name: "title",
+          label: "Title",
           type: "string",
+        },
+        {
+          name: "subtitle",
+          label: "Subtitle",
+          type: "string",
+        },
+        {
+          name: "offsetX",
+          label: "Background Horizontal Offset",
+          type: "number",
+          ui: {
+            parse: (value) => parseInt(value as unknown as string),
+            component: wrapFieldsWithMeta(({ input }) => {
+              return (
+                <div className="flex flex-row gap-2">
+                  <input
+                    id="offsetX"
+                    type="range"
+                    min="-50"
+                    max="50"
+                    step="1"
+                    {...input}
+                  />
+                  <div>{input.value ?? 0}%</div>
+                </div>
+              );
+            }) as any,
+          },
+        },
+        {
+          name: "offsetY",
+          label: "Background Vertical Offset",
+          type: "number",
+          ui: {
+            parse: (value) => parseInt(value as unknown as string),
+            component: wrapFieldsWithMeta(({ input }) => {
+              return (
+                <div className="flex flex-row gap-2">
+                  <input
+                    id="offsetY"
+                    type="range"
+                    min="-50"
+                    max="50"
+                    step="1"
+                    {...input}
+                  />
+                  <div>{input.value ?? 0}%</div>
+                </div>
+              );
+            }) as any,
+          },
         },
       ],
     },
   ],
 };
 
-interface Bubble {
-  id: number;
-  left: number;
-  bottom: number;
-  size: number;
-  speed: number;
-  horizontalSpeed: number;
-  opacity: number;
-  shineAngle: number;
-}
+// interface Bubble {
+//   id: number;
+//   left: number;
+//   bottom: number;
+//   size: number;
+//   speed: number;
+//   horizontalSpeed: number;
+//   opacity: number;
+//   shineAngle: number;
+// }
 
-interface BubbleAnimationProps {}
+// interface BubbleAnimationProps {}
 
-const initialBubbles = (): Bubble[] => {
-  const bubbles = [];
-  for (let i = 0; i < 20; i++) {
-    bubbles.push({
-      id: i,
-      bottom: Math.random() * 100,
-      left: Math.random() * 100,
-      size: Math.random() * 20 + 10,
-      speed: Math.random() * 0.5 + 5,
-      horizontalSpeed: (Math.random() - 0.5) * 0.1,
-      opacity: Math.random() * 0.5 + 0.5,
-      shineAngle: Math.random() * Math.PI * 2,
-    });
-  }
-  return bubbles;
-};
+// const initialBubbles = (): Bubble[] => {
+//   const bubbles = [];
+//   for (let i = 0; i < 20; i++) {
+//     bubbles.push({
+//       id: i,
+//       bottom: Math.random() * 100,
+//       left: Math.random() * 100,
+//       size: Math.random() * 20 + 10,
+//       speed: Math.random() * 0.5 + 5,
+//       horizontalSpeed: (Math.random() - 0.5) * 0.1,
+//       opacity: Math.random() * 0.5 + 0.5,
+//       shineAngle: Math.random() * Math.PI * 2,
+//     });
+//   }
+//   return bubbles;
+// };
 
-const BubbleAnimation: FC<BubbleAnimationProps> = () => {
-  const [bubbles, setBubbles] = useState<Bubble[]>(initialBubbles);
+// const BubbleAnimation: FC<BubbleAnimationProps> = () => {
+//   const [bubbles, setBubbles] = useState<Bubble[]>(initialBubbles);
 
-  useEffect(() => {
-    setBubbles((prevBubbles) =>
-      prevBubbles.length === 0 ? initialBubbles() : prevBubbles
-    );
+//   useEffect(() => {
+//     setBubbles((prevBubbles) =>
+//       prevBubbles.length === 0 ? initialBubbles() : prevBubbles
+//     );
 
-    const interval = setInterval(() => {
-      if (Math.random() < 0.4) return;
+//     const interval = setInterval(() => {
+//       if (Math.random() < 0.4) return;
 
-      const newBubble: Bubble = {
-        id: Math.random(),
-        bottom: 0,
-        left: 45 + (Math.random() - 0.5) * 10,
-        size: Math.random() * 20 + 10,
-        speed: Math.random() * 0.5 + 5,
-        horizontalSpeed: (Math.random() - 0.5) * 0.1,
-        opacity: Math.random() * 0.5 + 0.5,
-        shineAngle: Math.random() * Math.PI * 2,
-      };
+//       const newBubble: Bubble = {
+//         id: Math.random(),
+//         bottom: 0,
+//         left: 45 + (Math.random() - 0.5) * 10,
+//         size: Math.random() * 20 + 10,
+//         speed: Math.random() * 0.5 + 5,
+//         horizontalSpeed: (Math.random() - 0.5) * 0.1,
+//         opacity: Math.random() * 0.5 + 0.5,
+//         shineAngle: Math.random() * Math.PI * 2,
+//       };
 
-      setBubbles((prevBubbles) =>
-        prevBubbles.filter((bubble) => bubble.bottom < 110).concat(newBubble)
-      );
-    }, 1000);
+//       setBubbles((prevBubbles) =>
+//         prevBubbles.filter((bubble) => bubble.bottom < 110).concat(newBubble)
+//       );
+//     }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+//     return () => clearInterval(interval);
+//   }, []);
 
-  useEffect(() => {
-    let lastTime = 0;
-    const animateBubbles = () => {
-      const time = performance.now();
-      const dt = (time - lastTime) / 1000;
-      console.log(dt);
-      lastTime = time;
-      setBubbles((prevBubbles) =>
-        prevBubbles.map(
-          (bubble) =>
-            ({
-              ...bubble,
-              bottom: bubble.bottom + bubble.speed * dt,
-              left:
-                bubble.left +
-                Math.sin(bubble.bottom / 50) * bubble.horizontalSpeed,
-            } satisfies Bubble)
-        )
-      );
-      requestAnimationFrame(animateBubbles);
-    };
-    const animationFrame = requestAnimationFrame(animateBubbles);
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
+//   useEffect(() => {
+//     let lastTime = 0;
+//     const animateBubbles = () => {
+//       const time = performance.now();
+//       const dt = (time - lastTime) / 1000;
+//       console.log(dt);
+//       lastTime = time;
+//       setBubbles((prevBubbles) =>
+//         prevBubbles.map(
+//           (bubble) =>
+//             ({
+//               ...bubble,
+//               bottom: bubble.bottom + bubble.speed * dt,
+//               left:
+//                 bubble.left +
+//                 Math.sin(bubble.bottom / 50) * bubble.horizontalSpeed,
+//             } satisfies Bubble)
+//         )
+//       );
+//       requestAnimationFrame(animateBubbles);
+//     };
+//     const animationFrame = requestAnimationFrame(animateBubbles);
+//     return () => cancelAnimationFrame(animationFrame);
+//   }, []);
 
-  return (
-    <div className="relative w-full h-full overflow-visible">
-      {bubbles.map((bubble) => (
-        <div
-          key={bubble.id}
-          className="absolute rounded-full border-4 border-blue-500 flex items-center justify-center"
-          style={{
-            left: `${bubble.left}%`,
-            bottom: `${bubble.bottom || 0}%`,
-            width: `${bubble.size}px`,
-            height: `${bubble.size}px`,
-            opacity: bubble.opacity,
-            transition: "all 0.1s linear",
-          }}
-        >
-          {/* smaller circle for shine effect */}
-          <div
-            className="relative rounded-full bg-blue-300"
-            style={{
-              left: Math.cos((Math.PI * 3) / 4) * bubble.size * 0.2,
-              bottom: Math.sin((Math.PI * 3) / 4) * bubble.size * 0.2,
-              // transform: `translate(${Math.cos(bubble.shineAngle) * 0.2}px, ${
-              //   Math.sin(bubble.shineAngle) * 0.2
-              // }px)`,
-              width: "30%",
-              height: "30%",
-            }}
-          ></div>
-        </div>
-      ))}
-    </div>
-  );
-};
+//   return (
+//     <div className="relative w-full h-full overflow-visible">
+//       {bubbles.map((bubble) => (
+//         <div
+//           key={bubble.id}
+//           className="absolute rounded-full border-4 border-blue-500 flex items-center justify-center"
+//           style={{
+//             left: `${bubble.left}%`,
+//             bottom: `${bubble.bottom || 0}%`,
+//             width: `${bubble.size}px`,
+//             height: `${bubble.size}px`,
+//             opacity: bubble.opacity,
+//             transition: "all 0.1s linear",
+//           }}
+//         >
+//           {/* smaller circle for shine effect */}
+//           <div
+//             className="relative rounded-full bg-blue-300"
+//             style={{
+//               left: Math.cos((Math.PI * 3) / 4) * bubble.size * 0.2,
+//               bottom: Math.sin((Math.PI * 3) / 4) * bubble.size * 0.2,
+//               // transform: `translate(${Math.cos(bubble.shineAngle) * 0.2}px, ${
+//               //   Math.sin(bubble.shineAngle) * 0.2
+//               // }px)`,
+//               width: "30%",
+//               height: "30%",
+//             }}
+//           ></div>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
 
 interface GearAnimationProps {
   animation: "stutter-turn" | "slow-spin";
