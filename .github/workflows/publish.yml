@@ -87,10 +87,10 @@ jobs:
         with:
           # Automatically inject basePath in your Next.js configuration file.
           static_site_generator: next
-      - name: Inject basePath into tina configuration
-        run: |
-          # Replace "build: {" with "build: { basePath: '/delft-igem.github.io/website-tudelt-nl',"
-          sed -i "s/build: {/build: { basePath: '\/delft-igem.github.io\/website-tudelt-nl',/" ./tina/config.tsx
+      # - name: Inject basePath into tina configuration
+      #   run: |
+      #     # Replace "build: {" with "build: { basePath: '/delft-igem.github.io/website-tudelt-nl',"
+      #     sed -i "s/build: {/build: { basePath: '\/delft-igem.github.io\/website-tudelt-nl',/" ./tina/config.tsx
       - name: Restore cache
         uses: actions/cache@v4
         with:
