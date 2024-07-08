@@ -7,7 +7,7 @@ import { tinaField } from "tinacms/dist/react";
 
 interface SectionWithGraphicProps {
   title: string;
-  body: TinaMarkdownContent;
+  body: TinaMarkdownContent | TinaMarkdownContent[];
   graphic?: string;
   alt?: string;
   alignment?: "left" | "right";

@@ -20,15 +20,12 @@ export const Default: Story = {
     slides: [
       {
         imageUrl: img0.src,
-        text: "Slide 1",
       },
       {
         imageUrl: img1.src,
-        text: "Slide 2",
       },
       {
         imageUrl: img2.src,
-        text: "Slide 3",
       },
     ],
   },
