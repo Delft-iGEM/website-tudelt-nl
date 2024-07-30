@@ -4,15 +4,15 @@
     {
       "slides": [
         {
-          "imageUrl": "/uploads/igem2022.jpg",
-          "title": "Spyke 2022",
-          "subtitle": "Subtitle"
-        },
-        {
           "imageUrl": "/uploads/WhatsApp Image 2024-05-21 at 18.34.07.jpeg",
           "title": "NitroBLAST 2024",
           "subtitle": "Subtitle",
           "offsetY": -40
+        },
+        {
+          "imageUrl": "/uploads/igem2022.jpg",
+          "title": "Spyke 2022",
+          "subtitle": "Subtitle"
         }
       ],
       "_template": "IgemHero"
