@@ -6,8 +6,9 @@
         {
           "imageUrl": "/uploads/logo-met-tekst-kleur.png",
           "title": "NitroBLAST 2024",
-          "subtitle": "",
-          "offsetY": -40
+          "subtitle": "Laying the foundation for nitrogen fixation",
+          "offsetX": 0,
+          "offsetY": -27
         },
         {
           "imageUrl": "/uploads/igem2022.jpg",
