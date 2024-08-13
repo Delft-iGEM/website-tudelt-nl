@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
@@ -8,6 +7,7 @@ interface SponsorLogo {
   logo: string;
   alt: string;
   link: string;
+  scale?: number;
 }
 
 interface SponsorLogosProps {
@@ -32,15 +32,18 @@ const SponsorLogos: FC<SponsorLogosProps> = (props) => {
             key={index}
             href={sponsor.link}
             className="block group"
+            target="_blank"
             data-tina-field={tinaField(props.sponsors[index], "link")}
           >
-            <div className="relative h-16 w-32">
-              <Image
+            <div className="relative min-h-16 w-32 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-in-out">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={sponsor.logo}
                 alt={sponsor.alt}
-                layout="fill"
-                objectFit="contain"
-                className="!relative !h-auto !w-auto !max-h-full !max-w-full transition-all duration-300 ease-in-out grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100"
+                className="w-auto h-auto object-contain transition-all duration-300 ease-in-out grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100"
+                style={{
+                  transform: sponsor.scale ? `scale(${sponsor.scale})` : "none",
+                }}
                 data-tina-field={tinaField(props.sponsors[index], "logo")}
               />
             </div>
@@ -86,6 +89,12 @@ export const SponsorLogosTemplate: Template = {
           label: "Sponsor Link",
           type: "string",
           required: true,
+        },
+        {
+          name: "scale",
+          label: "Scale (0.1 - 5)",
+          type: "number",
+          required: false,
         },
       ],
     },
