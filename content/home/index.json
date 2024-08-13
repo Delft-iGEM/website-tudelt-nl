@@ -31,6 +31,10 @@
       "body": "Our team continues this long tradition this year with our project: NitroBLAST!\n",
       "alignment": "right",
       "_template": "SectionWithGraphic"
+    },
+    {
+      "title": "Our Sponsors",
+      "_template": "SponsorLogos"
     }
   ]
 }
