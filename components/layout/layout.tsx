@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Navbar from "./navbar";
-// import { Footer } from "./footer";
+import Footer, { FooterColumn, SocialLink } from "./footer";
 import { Global, GlobalHeaderNav } from "../../tina/__generated__/types";
 import { Poppins } from "next/font/google";
 import { cn } from "../../lib/cn";
@@ -24,6 +24,12 @@ export default function Layout({
   const navLinks = (data.header?.nav ?? []).filter(
     (nav) => nav !== null
   ) as GlobalHeaderNav[];
+  const columns = (data.footer?.columns ?? []).filter(
+    (column) => column !== null
+  ) as FooterColumn[];
+  const socialLinks = (data.footer?.socialLinks ?? []).filter(
+    (link) => link !== null
+  ) as SocialLink[];
 
   return (
     <>
@@ -37,7 +43,11 @@ export default function Layout({
 
           <main className="flex-1 flex flex-col">{children}</main>
 
-          {/* <Footer rawData={rawData} data={data?.footer} /> */}
+          <Footer
+            logo={data.footer?.logo ?? undefined}
+            columns={columns}
+            socialLinks={socialLinks}
+          />
         </div>
       </>
     </>

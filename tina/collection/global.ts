@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import { FooterFields } from "../../components/layout/footer";
 
 const Global: Collection = {
   label: "Global",
@@ -82,6 +83,12 @@ const Global: Collection = {
           ],
         },
       ],
+    },
+    {
+      type: "object",
+      label: "Footer",
+      name: "footer",
+      fields: FooterFields,
     },
     // {
     //   type: "object",

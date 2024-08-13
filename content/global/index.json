@@ -21,5 +21,15 @@
         ]
       }
     ]
+  },
+  "footer": {
+    "logo": "/uploads/TUDelft_logo_white.svg",
+    "socialLinks": [
+      {
+        "platform": "Instagram",
+        "url": "https://www.instagram.com/igemtudelft/",
+        "icon": "FaInstagram"
+      }
+    ]
   }
 }
