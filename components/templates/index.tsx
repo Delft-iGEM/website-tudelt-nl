@@ -7,17 +7,20 @@ import { replaceNullWithUndefined } from "../../lib/tsUtils";
 import SectionWithGraphic, {
   SectionWithGraphicTemplate,
 } from "./SectionWithGraphic";
+import SponsorLogos, { SponsorLogosTemplate } from "./SponsorLogos";
 
 export const templates: Template[] = [
   HeroImageTemplate,
   IgemHeroTemplate,
   SectionWithGraphicTemplate,
+  SponsorLogosTemplate,
 ];
 
 export const templateComponents = {
   HeroImage,
   IgemHero,
   SectionWithGraphic,
+  SponsorLogos,
 };
 
 export const Blocks: FC<{ blocks: HomeBlocks[] }> = ({ blocks }) => {
@@ -41,6 +44,13 @@ export const Blocks: FC<{ blocks: HomeBlocks[] }> = ({ blocks }) => {
                 {...block}
                 alignment={block.alignment as "left" | "right" | undefined}
               />
+            );
+          }
+          case "HomeBlocksSponsorLogos": {
+            const { title, sponsors } = block;
+            if (!sponsors) return null;
+            return (
+              <SponsorLogos key={index} title={title} sponsors={sponsors} />
             );
           }
         }
