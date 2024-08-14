@@ -36,6 +36,11 @@
       "title": "Our Sponsors",
       "sponsors": [
         {
+          "logo": "/uploads/sponsors/Bioke_logo_ob-2017 RGB.jpg",
+          "alt": "Bioke",
+          "link": "https://www.bioke.com/"
+        },
+        {
           "logo": "/uploads/sponsors/tudelftlogo.png",
           "alt": "TU Delft",
           "link": "https://www.tudelft.nl/",
