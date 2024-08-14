@@ -36,9 +36,10 @@
       "title": "Our Sponsors",
       "sponsors": [
         {
-          "logo": "/uploads/biotechnology.png",
+          "logo": "/uploads/sponsors/biotechnology.png",
           "alt": "TU Delft Biotechnology",
-          "link": "https://www.tudelft.nl/tnw/over-faculteit/afdelingen/biotechnology"
+          "link": "https://www.tudelft.nl/tnw/over-faculteit/afdelingen/biotechnology",
+          "scale": 1.5
         }
       ],
       "_template": "SponsorLogos"
