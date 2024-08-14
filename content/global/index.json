@@ -11,6 +11,10 @@
         "href": "",
         "children": [
           {
+            "label": "Project Description",
+            "href": "/nitroblast"
+          },
+          {
             "label": "About iGEM",
             "href": "/about-igem"
           }
