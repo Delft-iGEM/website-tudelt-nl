@@ -8,17 +8,7 @@
       },
       {
         "label": "About",
-        "href": "",
-        "children": [
-          {
-            "label": "Test 2",
-            "href": "/asd"
-          },
-          {
-            "label": "Our Sponsors",
-            "href": "https://igem.tnw.tudelft.nl/our-sponsors"
-          }
-        ]
+        "href": ""
       }
     ]
   },
