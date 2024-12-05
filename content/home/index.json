@@ -4,6 +4,11 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2017.jpg",
+          "title": "Case13a 2017",
+          "subtitle": "Fighting antibiotic resistance through rapid on-site diagnostics"
+        },
+        {
           "imageUrl": "/uploads/igem2018.jpg",
           "title": "ADOPE 2018",
           "subtitle": "Racing to keep sports clean through gene doping detection"
