@@ -93,9 +93,9 @@
       "_template": "SectionWithGraphic"
     },
     {
-      "graphic": "/uploads/logo-met-tekst-kleur.png",
-      "title": "Taking up the Mantle",
-      "body": "Our team continues this long tradition this year with our project: NitroBLAST!\n",
+      "graphic": "/uploads/DALL_E_2024-12-05_21.55.45_-_A_minimalistic_and_clean_illustration_depicting_the_timeline_of_the_iGEM_competition__three_distinct_sections_connected_by_a_simple_dotted_line._First-removebg-preview.png",
+      "title": "How Does iGEM Work?",
+      "body": "The competition follows a structured timeline:\n\n1. Team Formation & Research (Winter/Spring): Teams come together, brainstorm, and plan their project goals.\n2. Design, Build, Test (Summer): Over the summer, teams develop and refine their synthetic biology systems.\n3. Giant Jamboree (Fall): Held\n    in Paris, France, this event is the culmination of iGEM. Teams present \n   their work to a global audience, compete for awards, and receive \n   feedback from leading experts in the field.\n",
       "alignment": "right",
       "_template": "SectionWithGraphic"
     },
