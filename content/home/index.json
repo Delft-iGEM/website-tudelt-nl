@@ -4,6 +4,11 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2012.PNG",
+          "title": "Snifferomyces 2012",
+          "subtitle": "Engineering yeast cells to sniff out disease markers"
+        },
+        {
           "imageUrl": "/uploads/igem2013.jpg",
           "title": "Peptidor 2013",
           "subtitle": "Targeting MRSA through smart bacterial sentinels"
