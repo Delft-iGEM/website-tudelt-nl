@@ -46,16 +46,16 @@
           "offsetX": 35
         },
         {
+          "imageUrl": "/uploads/igem2022.jpg",
+          "title": "Spyke 2022",
+          "subtitle": "Combating drink spiking with biotechnology"
+        },
+        {
           "imageUrl": "/uploads/igem2024.jpeg",
           "title": "NitroBLAST 2024",
           "subtitle": "Laying the foundation for nitrogen fixation",
           "offsetX": 0,
           "offsetY": -27
-        },
-        {
-          "imageUrl": "/uploads/igem2022.jpg",
-          "title": "Spyke 2022",
-          "subtitle": "Combating drink spiking with biotechnology"
         }
       ],
       "_template": "IgemHero"
