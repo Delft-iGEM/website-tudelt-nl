@@ -4,6 +4,11 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2018.jpg",
+          "title": "ADOPE 2018",
+          "subtitle": "Racing to keep sports clean through gene doping detection"
+        },
+        {
           "imageUrl": "/uploads/igem2019.jpg",
           "title": "Sci-Phi 2019",
           "subtitle": "Expanding the bacterial toolbox for versatile synthetic biology"
