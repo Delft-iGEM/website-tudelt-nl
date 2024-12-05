@@ -4,65 +4,16 @@
     {
       "slides": [
         {
-          "imageUrl": "/uploads/igem2009.JPG",
-          "title": "Relay Race 2009",
-          "subtitle": "Engineering bacteria to relay messages across colonies with precision and control"
+          "imageUrl": "/uploads/igem2024.jpeg",
+          "title": "NitroBLAST 2024",
+          "subtitle": "Laying the foundation for nitrogen fixation",
+          "offsetX": 0,
+          "offsetY": -27
         },
         {
-          "imageUrl": "/uploads/igem2010.png",
-          "title": "Alkanivore 2010",
-          "subtitle": "Engineering bacteria to clean up oil spills and save our oceans"
-        },
-        {
-          "imageUrl": "/uploads/igem2011.jpg",
-          "title": "StickE. Coli 2011",
-          "subtitle": "Making bacteria stick through engineered mussel proteins"
-        },
-        {
-          "imageUrl": "/uploads/igem2012.PNG",
-          "title": "Snifferomyces 2012",
-          "subtitle": "Engineering yeast cells to sniff out disease markers"
-        },
-        {
-          "imageUrl": "/uploads/igem2013.jpg",
-          "title": "Peptidor 2013",
-          "subtitle": "Targeting MRSA through smart bacterial sentinels"
-        },
-        {
-          "imageUrl": "/uploads/igem2014.jpg",
-          "title": "Electrace 2014",
-          "subtitle": "Electrifying biosensors through bacterial electron transport"
-        },
-        {
-          "imageUrl": "/uploads/igem2015.JPG",
-          "title": "Biolink 2015",
-          "subtitle": "Structuring biofilms through precision 3D printing"
-        },
-        {
-          "imageUrl": "/uploads/igem2016.jpg",
-          "title": "Opticoli 2016",
-          "subtitle": "Illuminating microscopy through biological optics and lasers"
-        },
-        {
-          "imageUrl": "/uploads/igem2017.jpg",
-          "title": "Case13a 2017",
-          "subtitle": "Fighting antibiotic resistance through rapid on-site diagnostics"
-        },
-        {
-          "imageUrl": "/uploads/igem2018.jpg",
-          "title": "ADOPE 2018",
-          "subtitle": "Racing to keep sports clean through gene doping detection"
-        },
-        {
-          "imageUrl": "/uploads/igem2019.jpg",
-          "title": "Sci-Phi 2019",
-          "subtitle": "Expanding the bacterial toolbox for versatile synthetic biology"
-        },
-        {
-          "imageUrl": "/uploads/igem2020.jpeg",
-          "title": "PHOCUS 2020",
-          "subtitle": "Targeting locust swarms with precise and sustainable biocontrol",
-          "offsetX": 0
+          "imageUrl": "/uploads/igem2022.jpg",
+          "title": "Spyke 2022",
+          "subtitle": "Combating drink spiking with biotechnology"
         },
         {
           "imageUrl": "/uploads/igem2021.jpg",
@@ -71,16 +22,65 @@
           "offsetX": 35
         },
         {
-          "imageUrl": "/uploads/igem2022.jpg",
-          "title": "Spyke 2022",
-          "subtitle": "Combating drink spiking with biotechnology"
+          "imageUrl": "/uploads/igem2020.jpeg",
+          "title": "PHOCUS 2020",
+          "subtitle": "Targeting locust swarms with precise and sustainable biocontrol",
+          "offsetX": 0
         },
         {
-          "imageUrl": "/uploads/igem2024.jpeg",
-          "title": "NitroBLAST 2024",
-          "subtitle": "Laying the foundation for nitrogen fixation",
-          "offsetX": 0,
-          "offsetY": -27
+          "imageUrl": "/uploads/igem2019.jpg",
+          "title": "Sci-Phi 2019",
+          "subtitle": "Expanding the bacterial toolbox for versatile synthetic biology"
+        },
+        {
+          "imageUrl": "/uploads/igem2018.jpg",
+          "title": "ADOPE 2018",
+          "subtitle": "Racing to keep sports clean through gene doping detection"
+        },
+        {
+          "imageUrl": "/uploads/igem2017.jpg",
+          "title": "Case13a 2017",
+          "subtitle": "Fighting antibiotic resistance through rapid on-site diagnostics"
+        },
+        {
+          "imageUrl": "/uploads/igem2016.jpg",
+          "title": "Opticoli 2016",
+          "subtitle": "Illuminating microscopy through biological optics and lasers"
+        },
+        {
+          "imageUrl": "/uploads/igem2015.JPG",
+          "title": "Biolink 2015",
+          "subtitle": "Structuring biofilms through precision 3D printing"
+        },
+        {
+          "imageUrl": "/uploads/igem2014.jpg",
+          "title": "Electrace 2014",
+          "subtitle": "Electrifying biosensors through bacterial electron transport"
+        },
+        {
+          "imageUrl": "/uploads/igem2013.jpg",
+          "title": "Peptidor 2013",
+          "subtitle": "Targeting MRSA through smart bacterial sentinels"
+        },
+        {
+          "imageUrl": "/uploads/igem2012.PNG",
+          "title": "Snifferomyces 2012",
+          "subtitle": "Engineering yeast cells to sniff out disease markers"
+        },
+        {
+          "imageUrl": "/uploads/igem2011.jpg",
+          "title": "StickE. Coli 2011",
+          "subtitle": "Making bacteria stick through engineered mussel proteins"
+        },
+        {
+          "imageUrl": "/uploads/igem2010.png",
+          "title": "Alkanivore 2010",
+          "subtitle": "Engineering bacteria to clean up oil spills and save our oceans"
+        },
+        {
+          "imageUrl": "/uploads/igem2009.JPG",
+          "title": "Relay Race 2009",
+          "subtitle": "Engineering bacteria to relay messages across colonies with precision and control"
         }
       ],
       "_template": "IgemHero"
