@@ -4,6 +4,11 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2016.jpg",
+          "title": "Opticoli 2016",
+          "subtitle": "Illuminating microscopy through biological optics and lasers"
+        },
+        {
           "imageUrl": "/uploads/igem2017.jpg",
           "title": "Case13a 2017",
           "subtitle": "Fighting antibiotic resistance through rapid on-site diagnostics"
