@@ -4,6 +4,12 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2020.jpeg",
+          "title": "PHOCUS 2020",
+          "subtitle": "Targeting locust swarms with precise and sustainable biocontrol",
+          "offsetX": 0
+        },
+        {
           "imageUrl": "/uploads/igem2021.jpg",
           "title": "AptaVita 2021",
           "subtitle": "Empowering accessible diagnostics to expose hidden hunger",
