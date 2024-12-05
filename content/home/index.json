@@ -4,6 +4,11 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2013.jpg",
+          "title": "Peptidor 2013",
+          "subtitle": "Targeting MRSA through smart bacterial sentinels"
+        },
+        {
           "imageUrl": "/uploads/igem2014.jpg",
           "title": "Electrace 2014",
           "subtitle": "Electrifying biosensors through bacterial electron transport"
