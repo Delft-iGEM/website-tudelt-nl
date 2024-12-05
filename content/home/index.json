@@ -4,6 +4,11 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2009.JPG",
+          "title": "Relay Race 2009",
+          "subtitle": "Engineering bacteria to relay messages across colonies with precision and control"
+        },
+        {
           "imageUrl": "/uploads/igem2010.png",
           "title": "Alkanivore 2010",
           "subtitle": "Engineering bacteria to clean up oil spills and save our oceans"
