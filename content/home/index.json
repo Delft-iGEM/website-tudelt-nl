@@ -4,6 +4,12 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2021.jpg",
+          "title": "AptaVita",
+          "subtitle": "Empowering accessible diagnostics to expose hidden hunger",
+          "offsetX": 35
+        },
+        {
           "imageUrl": "/uploads/igem2024.jpeg",
           "title": "NitroBLAST 2024",
           "subtitle": "Laying the foundation for nitrogen fixation",
