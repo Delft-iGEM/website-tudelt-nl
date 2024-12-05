@@ -42,7 +42,8 @@ const SectionWithGraphic: FC<SectionWithGraphicProps> = (props) => {
       <div
         className={cn(
           "w-full flex flex-col justify-center space-y-4 px-8 md:px-12",
-          alignment === "right" && "order-1"
+          alignment === "right" && graphic && "order-1",
+          !graphic && "col-span-2 max-w-[800px] mx-auto"
         )}
       >
         <div>

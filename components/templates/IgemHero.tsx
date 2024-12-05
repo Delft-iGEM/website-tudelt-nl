@@ -59,13 +59,13 @@ const IgemHero: FC<IgemHeroProps> = ({ slides = [], ...props }) => {
 
                   <div className="flex flex-col gap-4">
                     <h1
-                      className="font-bold text-4xl md:text-8xl text-white text-center"
+                      className="text-shadow-custom font-bold text-4xl md:text-8xl text-white text-center"
                       data-tina-field={tinaField(slide, "title")}
                     >
                       {slide.title}
                     </h1>
                     <h2
-                      className="text-3xl md:text-4xl text-white text-center"
+                      className="text-shadow-custom text-3xl md:text-4xl text-white text-center"
                       data-tina-field={tinaField(slide, "subtitle")}
                     >
                       {slide.subtitle}

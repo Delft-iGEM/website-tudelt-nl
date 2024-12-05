@@ -50,7 +50,7 @@ const HeroImage: FC<PropsWithChildren<HeroImageProps>> = (props) => {
       {text && text.length > 0 ? (
         <div className={`absolute inset-0 flex ${textAlignment}`}>
           <h1
-            className={`text-4xl font-bold ${textColorClass}`}
+            className={`text-4xl font-bold ${textColorClass} drop-shadow-2xl`}
             data-tina-field={tinaField(props, "text")}
           >
             {text}
