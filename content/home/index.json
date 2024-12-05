@@ -87,8 +87,8 @@
     },
     {
       "graphic": "/uploads/brick_opt.svg",
-      "title": "A History of Success",
-      "body": "TU Delft has been participating in iGEM since 2008 - 17 years! There has hardly been a year when the university team did not take home several awards, including the Grand Prize on several occasions!\n",
+      "title": "What is iGEM?",
+      "body": "The International Genetically Engineered Machine (iGEM) competition\n is a prestigious global platform in synthetic biology. Since its \ninception in 2004, iGEM has grown to involve hundreds of teams from \nuniversities and research institutions worldwide. It brings together \nstudents from diverse academic disciplines to create innovative \nsolutions to pressing global challenges.\n\nParticipants\n tackle real-world issues like bioremediation, disease treatment, food \nsecurity, and environmental sustainability. By combining experimental \nbiology with computational tools such as modeling and software \ndevelopment, iGEM projects uniquely blend life sciences, engineering, \nand social impact.\n",
       "alignment": "left",
       "_template": "SectionWithGraphic"
     },
