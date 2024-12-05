@@ -4,6 +4,11 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/igem2011.jpg",
+          "title": "StickE. Coli 2011",
+          "subtitle": "Making bacteria stick through engineered mussel proteins"
+        },
+        {
           "imageUrl": "/uploads/igem2012.PNG",
           "title": "Snifferomyces 2012",
           "subtitle": "Engineering yeast cells to sniff out disease markers"
