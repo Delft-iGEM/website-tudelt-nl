@@ -88,14 +88,14 @@
     {
       "graphic": "/uploads/brick_opt.svg",
       "title": "What is iGEM?",
-      "body": "The International Genetically Engineered Machine (iGEM) competition\n is a prestigious global platform in synthetic biology. Since its \ninception in 2004, iGEM has grown to involve hundreds of teams from \nuniversities and research institutions worldwide. It brings together \nstudents from diverse academic disciplines to create innovative \nsolutions to pressing global challenges.\n\nParticipants\n tackle real-world issues like bioremediation, disease treatment, food \nsecurity, and environmental sustainability. By combining experimental \nbiology with computational tools such as modeling and software \ndevelopment, iGEM projects uniquely blend life sciences, engineering, \nand social impact.\n",
+      "body": "The International Genetically Engineered Machine (iGEM) competition\nis a prestigious global platform in synthetic biology. Since its\ninception in 2004, iGEM has grown to involve hundreds of teams from\nuniversities and research institutions worldwide. It brings together\nstudents from diverse academic disciplines to create innovative\nsolutions to pressing global challenges.\n\nParticipants\ntackle real-world issues like bioremediation, disease treatment, food\nsecurity, and environmental sustainability. By combining experimental\nbiology with computational tools such as modeling and software\ndevelopment, iGEM projects uniquely blend life sciences, engineering,\nand social impact.\n",
       "alignment": "left",
       "_template": "SectionWithGraphic"
     },
     {
       "graphic": "/uploads/DALL_E_2024-12-05_21.55.45_-_A_minimalistic_and_clean_illustration_depicting_the_timeline_of_the_iGEM_competition__three_distinct_sections_connected_by_a_simple_dotted_line._First-removebg-preview.png",
       "title": "How Does iGEM Work?",
-      "body": "The competition follows a structured timeline:\n\n1. Team Formation & Research (Winter/Spring): Teams come together, brainstorm, and plan their project goals.\n2. Design, Build, Test (Summer): Over the summer, teams develop and refine their synthetic biology systems.\n3. Giant Jamboree (Fall): Held\n    in Paris, France, this event is the culmination of iGEM. Teams present \n   their work to a global audience, compete for awards, and receive \n   feedback from leading experts in the field.\n",
+      "body": "The competition follows a structured timeline:\n\n1. Team Formation & Research (Winter/Spring): Teams come together, brainstorm, and plan their project goals.\n2. Design, Build, Test (Summer): Over the summer, teams develop and refine their synthetic biology systems.\n3. Giant Jamboree (Fall): Held\n   in Paris, France, this event is the culmination of iGEM. Teams present\n   their work to a global audience, compete for awards, and receive\n   feedback from leading experts in the field.\n",
       "alignment": "right",
       "_template": "SectionWithGraphic"
     },
@@ -109,13 +109,19 @@
     },
     {
       "title": "Join Us!",
-      "body": "At TU Delft, iGEM is also available as a 15 ECTS course, providing students with an immersive academic and practical experience.\n\nReady to push the boundaries of synthetic biology and shape a sustainable \nfuture? Visit the iGEM course page on [Brightspace for application \ndetails](https://brightspace.tudelft.nl/): LM3692.\n",
+      "body": "At TU Delft, iGEM is also available as a 15 ECTS course, providing students with an immersive academic and practical experience.\n\nReady to push the boundaries of synthetic biology and shape a sustainable\nfuture? Visit the iGEM course page on [Brightspace for application\ndetails](https://brightspace.tudelft.nl/): LM3692.\n",
       "alignment": "left",
       "_template": "SectionWithGraphic"
     },
     {
       "title": "Our Sponsors",
       "sponsors": [
+        {
+          "logo": "/uploads/brick_opt.svg",
+          "alt": "lelele",
+          "link": "zamkorus.pl",
+          "scale": 0.8
+        },
         {
           "logo": "/uploads/sponsors/Logo-UnitedConsumers-jpg.png",
           "alt": "United Consumers",
