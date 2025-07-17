@@ -4,6 +4,7 @@
     {
       "slides": [
         {
+          "imageUrl": "/uploads/SVH_0249.JPG",
           "title": "Snaccine 2025",
           "subtitle": "An edible phage-based platform"
         },
@@ -88,6 +89,10 @@
         }
       ],
       "_template": "IgemHero"
+    },
+    {
+      "title": "SCNACCCINE",
+      "_template": "SectionWithGraphic"
     },
     {
       "graphic": "/uploads/brick_opt.svg",
