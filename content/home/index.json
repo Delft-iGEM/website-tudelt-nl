@@ -92,9 +92,9 @@
     },
     {
       "graphic": "/uploads/logo1_transparent.png",
-      "title": "What is Snaccine?",
-      "body": "With snaccine, your gut is the vaccine factory. Phages (viruses for bacteria) will infect bacteria in the gut, and have them produce the mRNA vaccine.  DNA phages can be kept at much higher temperatures (room temperature) than mRNA vaccines are (-80°C). They don't require nearly as much chemical processing. And they don't require an injection, but can be taken orally. This makes our platform ideal for fighting bird flu, neglected tropical diseases or the next pandemic.\n",
-      "alignment": "left",
+      "title": "What are snaccines?",
+      "body": "With snaccines, the vaccine factory is in your gut. Phages, viruses for bacteria, are the star of the show. Our edited phages make bacteria in the gut produce the mRNA vaccine. This brings many advantages over both traditional vaccines and mRNA vaccines. DNA phages can be kept at much higher temperatures (room temperature) than mRNA vaccines are (-80°C). They don't require nearly as much chemical processing. Like mRNA vaccines, it takes hours, not years, to develop a vaccine. And a snaccine doesn't require an injection, but can be taken orally. This makes our platform ideal for fighting bird flu, neglected tropical diseases or the next pandemic.\n",
+      "alignment": "right",
       "_template": "SectionWithGraphic"
     },
     {
@@ -115,7 +115,7 @@
       "graphic": "/uploads/449937352_18356672818108371_5536952289870875212_n.jpg",
       "alt": "",
       "title": "Why Join iGEM at TU Delft?",
-      "body": "We are preparing for the 2025 iGEM competition and are seeking passionate, talented students from across TU Delft’s faculties to join our team. Whether your background is in biology, engineering, computer science, design, or social sciences, your skills can help shape groundbreaking solutions in synthetic biology.By joining the TU Delft iGEM team, you will:\n\n* Gain hands-on experience in cutting-edge scientific research.\n* Work in an interdisciplinary, collaborative environment.\n* Contribute to projects that address global challenges and make a meaningful societal impact.\n\nBeyond lab work, our iGEM team offers opportunities to:\n\n* Engage in project design and innovation.\n* Develop computational tools and software.\n* Lead public outreach efforts, making science accessible to broader audiences.\n",
+      "body": "For 2026, we will be seeking passionate, talented students from across TU Delft’s faculties to join our team. Whether your background is in biology, engineering, computer science, design, or social sciences, your skills can help shape groundbreaking solutions in synthetic biology. By joining the TU Delft iGEM team, you will:\n\n* Gain hands-on experience in cutting-edge scientific research.\n* Work in an interdisciplinary, collaborative environment.\n* Contribute to projects that address global challenges and make a meaningful societal impact.\n\nBeyond lab work, our iGEM team offers opportunities to:\n\n* Engage in project design and innovation.\n* Develop computational tools and software.\n* Lead public outreach efforts, making science accessible to broader audiences.\n",
       "alignment": "right",
       "_template": "SectionWithGraphic"
     },
