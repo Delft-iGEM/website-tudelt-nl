@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="tud logo colour.svg"
+   width="103.98"
+   height="40.619999"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.9780317"
+     inkscape:cx="66.391702"
+     inkscape:cy="63.579346"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <g
+     id="black"
+     inkscape:label="black"
+     style="fill:#000000;fill-opacity:1">
+    <path
+       d="m 48.13,22.5 h 4.1 c 4.64,0 6.56,3.5 6.56,7.66 0,4.15 -1.92,7.65 -6.56,7.65 h -4.1 v -15.3 z m -2.79,17.7 h 6.9 c 8.57,0 9.47,-7.27 9.47,-10.04 0,-2.77 -0.9,-10.05 -9.48,-10.05 h -6.89 v 20.1 z"
+       id="path8"
+       style="fill:#000000;fill-opacity:1" />
+    <path
+       d="m 95.73,26.23 v 1.84 h 2.38 v 8.9 c 0,1.86 0.03,3.65 3.95,3.65 0.61,0 1.18,-0.06 1.8,-0.17 v -2.03 c -0.42,0.1 -0.96,0.17 -1.38,0.17 -0.95,0 -1.72,-0.48 -1.72,-1.48 v -9.04 h 3.22 v -1.84 h -3.22 v -3.8 l -2.65,0.83 v 2.98 h -2.38"
+       id="path7"
+       style="fill:#000000;fill-opacity:1" />
+    <path
+       d="M 90.99,40.2 V 28.07 h 3.22 v -1.84 h -3.22 v -2.24 c 0,-1.62 0.78,-1.9 2.28,-1.9 0.44,0 0.89,0.06 1.33,0.09 v -2.2 A 8.59,8.59 0 0 0 92.71,19.7 c -2.5,0 -4.36,1.26 -4.36,3.93 v 2.61 h -2.72 v 1.84 h 2.72 v 12.13 h 2.64"
+       id="path6"
+       style="fill:#000000;fill-opacity:1" />
+    <path
+       d="m 19.57,10.33 c -1.35,0.42 -2.75,0.08 -2.75,-1.73 0,-2.77 6.49,-5.09 7.4,-7.5 C 24.43,0.49 24.45,0 24.16,0 c -0.2,0.02 -0.04,0.32 -0.5,0.78 -2.69,2.69 -7.19,2.68 -10.65,4.24 -2.26,1.02 -8.9,4.15 -7.37,11.13 0.07,0.33 0.27,1.44 0.47,1.44 0.24,0 0.23,-0.66 0.23,-1.46 -0.05,-4.16 4.86,-5.32 6.46,-8.04 0.2,-0.32 0.52,-0.77 0.6,-0.56 0.04,0.1 0.01,0.25 -0.05,0.54 -0.5,2.23 -2.83,3.66 -2.17,5.26 0.85,2.07 3.32,0.53 4.08,-0.8 0.2,-0.37 0.32,-0.6 0.46,-0.56 0.1,0.04 0.1,0.46 0.03,0.84 -0.4,2.4 -0.96,3.75 -2.71,5.12 -0.56,0.43 -1.44,0.52 -1.33,0.86 0.03,0.09 0.41,0.08 0.71,0.05 4.68,-0.3 8.59,-5.82 9.62,-9.43 0.11,-0.25 0.14,-0.5 0.03,-0.58 -0.14,-0.1 -0.35,0.14 -0.56,0.33 -0.53,0.47 -1.26,0.96 -1.94,1.17"
+       id="path5"
+       style="fill:#000000;fill-opacity:1" />
+    <path
+       d="m 6.23,40.2 h 5.55 V 24.01 H 18 v -3.9 H 0 v 3.9 h 6.23 v 16.2"
+       id="path4"
+       style="fill:#000000;fill-opacity:1" />
+    <path
+       d="m 80.07,20.11 h 2.65 v 20.1 h -2.65 z"
+       id="path3"
+       style="fill:#000000;fill-opacity:1" />
+    <path
+       d="m 76.88,33.72 v -1.31 c 0,-3.87 -2.2,-6.6 -6.15,-6.6 -4.41,0 -6.47,3.42 -6.47,7.52 0,4.12 1.78,7.29 6.25,7.29 3.34,0 5.78,-1.59 6.2,-4.76 h -2.78 c -0.3,2.03 -1.33,2.84 -3.39,2.84 -2.7,0 -3.59,-2.4 -3.59,-4.98 z m -9.87,-1.84 c 0.02,-2.18 1.34,-4.15 3.53,-4.15 2.55,0 3.55,1.76 3.55,4.15 z"
+       id="path2"
+       style="fill:#000000;fill-opacity:1" />
+  </g>
+  <g
+     id="cyan"
+     inkscape:label="cyan"
+     style="fill:#00a6d6;fill-opacity:1">
+    <path
+       d="m 30.2,36.72 c 2.62,0 4.03,-1.74 4.03,-4.18 V 20.11 h 5.56 v 12.71 c -0.06,5.6 -4.53,7.8 -9.59,7.8 -5.05,0 -9.53,-2.2 -9.58,-7.8 v -12.7 h 5.55 v 12.42 c 0,2.44 1.42,4.18 4.03,4.18"
+       id="path1"
+       style="fill:#00a6d6;fill-opacity:1" />
+  </g>
+</svg>

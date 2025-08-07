@@ -34,7 +34,7 @@ export default function Layout({
   return (
     <>
       <Head>
-        <title>NitroBLAST</title>
+        <title>{data.title ?? "iGEM TUDELFT"}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <>

@@ -16,6 +16,13 @@ const Global: Collection = {
   },
   fields: [
     {
+      type: "string",
+      label: "Site Title",
+      name: "title",
+      required: false,
+      description: "The title of the website shown in the browser tab.",
+    },
+    {
       type: "object",
       label: "Header",
       name: "header",

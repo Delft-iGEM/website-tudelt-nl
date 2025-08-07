@@ -91,7 +91,7 @@
       "_template": "IgemHero"
     },
     {
-      "graphic": "/uploads/logo1_transparent.png",
+      "graphic": "/uploads/logo1.svg",
       "title": "What are snaccines?",
       "body": "With snaccines, the vaccine factory is in your gut. Phages, viruses for bacteria, are the star of the show. Our edited phages make bacteria in the gut produce the mRNA vaccine. This brings many advantages over both traditional vaccines and mRNA vaccines. DNA phages can be kept at much higher temperatures (room temperature) than mRNA vaccines are (-80°C). They don't require nearly as much chemical processing. Like mRNA vaccines, it takes hours, not years, to develop a vaccine. And a snaccine doesn't require an injection, but can be taken orally. This makes our platform ideal for fighting bird flu, neglected tropical diseases or the next pandemic.\n",
       "alignment": "right",
@@ -129,32 +129,31 @@
       "title": "Our Sponsors",
       "sponsors": [
         {
-          "logo": "/uploads/brick_opt.svg",
-          "alt": "lelele",
-          "link": "zamkorus.pl",
-          "scale": 0.8
+          "logo": "/uploads/snapmaker_logo.svg",
+          "alt": "Snapmaker",
+          "link": "https://www.snapmaker.com"
         },
         {
-          "logo": "/uploads/sponsors/Logo-UnitedConsumers-jpg.png",
-          "alt": "United Consumers",
-          "link": "https://www.unitedconsumers.com/energie/"
+          "logo": "/uploads/SnapGene_Logo.svg",
+          "alt": "Snapgene",
+          "link": "https://www.snapgene.com/"
         },
         {
-          "logo": "/uploads/sponsors/Bioke_logo_ob-2017 RGB.jpg",
-          "alt": "Bioke",
-          "link": "https://www.bioke.com/"
-        },
-        {
-          "logo": "/uploads/sponsors/tudelftlogo.png",
+          "logo": "/uploads/tud logo color.svg",
           "alt": "TU Delft",
-          "link": "https://www.tudelft.nl/",
-          "scale": 0.9
+          "link": "https://www.tudelft.nl/en",
+          "scale": 1.1
         },
         {
           "logo": "/uploads/sponsors/biotechnology.png",
           "alt": "TU Delft Biotechnology",
-          "link": "https://www.tudelft.nl/tnw/over-faculteit/afdelingen/biotechnology",
-          "scale": 1.5
+          "link": "https://www.tudelft.nl/en/faculty-of-applied-sciences/about-faculty/departments/biotechnology",
+          "scale": 1.3
+        },
+        {
+          "logo": "/uploads/BN_beeldmerk_origineel_100531.jpg",
+          "alt": "Bionanoscience department",
+          "link": "https://www.tudelft.nl/en/faculty-of-applied-sciences/about-faculty/departments/bionanoscience/about-the-department"
         }
       ],
       "_template": "SponsorLogos"
