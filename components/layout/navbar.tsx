@@ -162,7 +162,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, logoSrc }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="h-16 bg-linear-to-r from-blue-500 to-green-500 ">
+    <nav className="h-16 bg-linear-to-r from-tu-delft to-igem ">
       <div className="container h-full mx-auto flex justify-between items-center">
         {logoSrc ? (
           <Image
