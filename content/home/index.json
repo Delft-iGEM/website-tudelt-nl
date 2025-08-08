@@ -105,7 +105,7 @@
       "_template": "SectionWithGraphic"
     },
     {
-      "graphic": "/uploads/DALL_E_2024-12-05_21.55.45_-_A_minimalistic_and_clean_illustration_depicting_the_timeline_of_the_iGEM_competition__three_distinct_sections_connected_by_a_simple_dotted_line._First-removebg-preview.png",
+      "graphic": "/uploads/igem-cycle-2023.png",
       "title": "How Does iGEM Work?",
       "body": "The competition follows a structured timeline:\n\n1. Team Formation & Research (Winter/Spring): Teams come together, brainstorm, and plan their project goals.\n2. Design, Build, Test (Summer): Over the summer, teams develop and refine their synthetic biology systems.\n3. Giant Jamboree (Fall): Held\n   in Paris, France, this event is the culmination of iGEM. Teams present\n   their work to a global audience, compete for awards, and receive\n   feedback from leading experts in the field.\n",
       "alignment": "right",
@@ -145,7 +145,7 @@
           "scale": 1.1
         },
         {
-          "logo": "/uploads/sponsors/biotechnology.png",
+          "logo": "/uploads/biotechnology.png",
           "alt": "TU Delft Biotechnology",
           "link": "https://www.tudelft.nl/en/faculty-of-applied-sciences/about-faculty/departments/biotechnology",
           "scale": 1.3

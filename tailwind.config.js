@@ -7,9 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "accent-dark": "#185A4F",
-        "accent-light": "#05BE85",
-        "accent-lighter": "#D7FDF4",
+        "accent-dark": "hsl(194, 100%, 24%)",
+        "accent": "hsl(194, 100%, 42%)",
+        "accent-light": "hsl(194, 100%, 75%)",
+        "accent-lighter": "hsl(194, 38%, 91%)",
       },
       textShadow: {
         'custom': '2px 2px 4px rgba(0, 0, 0, 0.8)',

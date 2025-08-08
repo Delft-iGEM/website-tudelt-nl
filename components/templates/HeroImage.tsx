@@ -64,7 +64,7 @@ const HeroImage: FC<PropsWithChildren<HeroImageProps>> = (props) => {
         <div
           className={cn(
             "absolute inset-x-0 bottom-0 h-[30%]",
-            "bg-gradient-to-t from-white to-transparent",
+            "bg-linear-to-t from-white to-transparent",
             fadeClassName
           )}
         ></div>

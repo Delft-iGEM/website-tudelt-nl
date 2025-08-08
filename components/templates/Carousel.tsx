@@ -51,7 +51,7 @@ const Carousel: FC<PropsWithChildren<CarouselProps>> = ({
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {React.Children.map(children, (child) => (
-            <div className="flex-grow-0 flex-shrink-0 basis-full min-w-0">
+            <div className="grow-0 shrink-0 basis-full min-w-0">
               {child}
             </div>
           ))}

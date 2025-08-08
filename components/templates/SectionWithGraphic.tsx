@@ -34,7 +34,7 @@ const SectionWithGraphic: FC<SectionWithGraphicProps> = (props) => {
             alt={alt}
             layout="fill"
             objectFit="contain"
-            className="!relative !h-auto !w-auto !max-h-full !max-w-full rounded-lg"
+            className="relative! h-auto! w-auto! max-h-full! max-w-full! rounded-lg"
             data-tina-field={tinaField(props, "graphic")}
           />
         </div>

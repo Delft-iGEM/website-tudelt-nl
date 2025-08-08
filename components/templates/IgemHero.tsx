@@ -51,7 +51,7 @@ const IgemHero: FC<IgemHeroProps> = ({ slides = [], ...props }) => {
               fadeClassName="from-accent-dark"
             >
               <div className="w-full h-full flex justify-center pb-44">
-                <div className="w-full grid grid-cols-[1fr,max-content,1fr] gap-4 items-end">
+                <div className="w-full grid grid-cols-[1fr_max-content_1fr] gap-4 items-end">
                   {/* <div className="flex justify-end items-center">
                     <VectorCup className="w-24 text-yellow-300" />
                   </div> */}
@@ -92,7 +92,7 @@ const IgemHero: FC<IgemHeroProps> = ({ slides = [], ...props }) => {
             className={
               "absolute top-[-30px] right-[80px] md:right-0 md:top-[250px] transform translate-x-1/2 -translate-y-1/2"
             }
-            svgClassName="text-green-600 w-[250px]"
+            svgClassName="text-accent w-[250px]"
           />
           <GearAnimation
             animation="slow-spin"

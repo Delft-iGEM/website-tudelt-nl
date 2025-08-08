@@ -42,7 +42,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
         {() => (
           <>
             <Popover.Button
-              className="flex items-center text-white font-bold hover:text-opacity-50 focus:outline-none"
+              className="flex items-center text-white font-bold hover:text-opacity-50 focus:outline-hidden"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -62,7 +62,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
             >
               <Popover.Panel
                 static
-                className="w-40 mt-2  bg-green-500 rounded shadow-lg"
+                className="w-40 mt-2  bg-green-500 rounded-sm shadow-lg"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -162,7 +162,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, logoSrc }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="h-16 bg-gradient-to-r from-blue-500 to-green-500 ">
+    <nav className="h-16 bg-linear-to-r from-blue-500 to-green-500 ">
       <div className="container h-full mx-auto flex justify-between items-center">
         {logoSrc ? (
           <Image
@@ -186,7 +186,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, logoSrc }) => {
         <div className="md:hidden mr-4">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-white focus:outline-none"
+            className="text-white focus:outline-hidden"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -200,13 +200,13 @@ const Navbar: React.FC<NavbarProps> = ({ links, logoSrc }) => {
           <div className="absolute right-0 p-4">
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-white focus:outline-none"
+              className="text-white focus:outline-hidden"
             >
               <X size={24} />
             </button>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-500 to-green-500 p-4">
+          <div className="bg-linear-to-r from-blue-500 to-green-500 p-4">
             {links.map((link, index) => (
               <MobileNavItem key={index} item={link} />
             ))}
