@@ -5,7 +5,7 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { cn } from "../../lib/cn";
 import { tinaField } from "tinacms/dist/react";
 
-interface SectionWithGraphicProps {
+interface SectionWithGraphicProps extends Record<string, unknown> {
   title: string;
   body: TinaMarkdownContent | TinaMarkdownContent[];
   graphic?: string;
@@ -32,9 +32,8 @@ const SectionWithGraphic: FC<SectionWithGraphicProps> = (props) => {
           <Image
             src={graphic}
             alt={alt}
-            layout="fill"
-            objectFit="contain"
-            className="relative! h-auto! w-auto! max-h-full! max-w-full! rounded-lg"
+            fill
+            className="object-contain rounded-lg relative! h-auto! w-auto! max-h-full! max-w-full!"
             data-tina-field={tinaField(props, "graphic")}
           />
         </div>

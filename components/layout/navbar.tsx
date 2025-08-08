@@ -9,6 +9,23 @@ import { tinaField } from "tinacms/dist/react";
 import { cn } from "../../lib/cn";
 import { GlobalHeaderNav } from "../../tina/__generated__/types";
 
+// Helper: determine if a link is active based on current path
+function normalizePath(path?: string | null) {
+  if (!path) return "";
+  const noHash = path.split("#")[0];
+  const noQuery = noHash.split("?")[0];
+  if (noQuery.length > 1 && noQuery.endsWith("/")) return noQuery.slice(0, -1);
+  return noQuery;
+}
+function isActivePath(currentPath: string, href?: string | null) {
+  const a = normalizePath(currentPath);
+  const b = normalizePath(href);
+  if (!b) return false;
+  if (a === b) return true;
+  if (b !== "/" && a.startsWith(b + "/")) return true;
+  return false;
+}
+
 interface NavItemProps {
   item: GlobalHeaderNav;
 }
@@ -37,12 +54,20 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
   };
 
   if (item.children) {
+    const anyChildActive = item.children?.some(
+      (child) => child && isActivePath(router.asPath, child.href)
+    );
+    const parentActive = isActivePath(router.asPath, item.href) || anyChildActive;
+
     return (
       <Popover className="relative">
         {() => (
           <>
             <Popover.Button
-              className="flex items-center text-white font-bold hover:text-opacity-50 focus:outline-hidden"
+              className={cn(
+                "flex items-center text-white font-bold hover:opacity-50 focus:outline-hidden",
+                parentActive && "opacity-50"
+              )}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -51,7 +76,6 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
             </Popover.Button>
 
             <Transition
-              className="absolute z-20"
               show={isOpen}
               enter="transition ease-out duration-100"
               enterFrom="transform opacity-0 scale-95"
@@ -62,7 +86,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
             >
               <Popover.Panel
                 static
-                className="w-40 mt-2  bg-green-500 rounded-sm shadow-lg"
+                className="absolute z-20 w-40 mt-2  bg-green-500 rounded-sm shadow-lg"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
@@ -74,8 +98,8 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
                         key={index}
                         href={child.href}
                         className={cn(
-                          "block px-4 py-2 text-sm text-white font-bold hover:text-opacity-50",
-                          router.asPath === child.href && "text-opacity-50"
+                          "block px-4 py-2 text-sm text-white font-bold hover:opacity-50",
+                          isActivePath(router.asPath, child.href) && "opacity-50"
                         )}
                       >
                         {child.label}
@@ -96,8 +120,8 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
       data-tina-field={tinaField(item, "label")}
       href={item.href || "#"}
       className={cn(
-        "text-white font-bold hover:text-opacity-50",
-        router.asPath === item.href && "text-opacity-50"
+        "text-white font-bold hover:opacity-50",
+        isActivePath(router.asPath, item.href) && "opacity-50"
       )}
     >
       {item.label}
@@ -110,10 +134,16 @@ const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
   const router = useRouter();
 
   if (item.children) {
+    const anyChildActive = item.children?.some(
+      (child) => child && isActivePath(router.asPath, child.href)
+    );
     return (
       <div>
         <button
-          className="w-full text-left text-white font-bold px-3 py-2 rounded-md flex items-center"
+          className={cn(
+            "w-full text-left text-white font-bold px-3 py-2 rounded-md flex items-center",
+            anyChildActive && "opacity-50"
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
           {item.label}
@@ -130,8 +160,8 @@ const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
                   key={index}
                   href={child.href}
                   className={cn(
-                    "block text-white font-bold px-3 py-2 rounded-md",
-                    router.asPath === child.href && "text-opacity-50"
+                    "block text-white font-bold px-3 py-2 rounded-md hover:opacity-50",
+                    isActivePath(router.asPath, child.href) && "opacity-50"
                   )}
                 >
                   {child.label}
@@ -149,8 +179,8 @@ const MobileNavItem: React.FC<NavItemProps> = ({ item }) => {
       data-tina-field={tinaField(item, "label")}
       href={item.href || "#"}
       className={cn(
-        "block text-white font-bold  px-3 py-2 rounded-md",
-        router.asPath === item.href && "text-opacity-50"
+        "block text-white font-bold  px-3 py-2 rounded-md hover:opacity-50",
+        isActivePath(router.asPath, item.href) && "opacity-50"
       )}
     >
       {item.label}
