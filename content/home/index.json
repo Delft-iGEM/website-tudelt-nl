@@ -120,12 +120,6 @@
       "_template": "SectionWithGraphic"
     },
     {
-      "title": "Join Us!",
-      "body": "At TU Delft, iGEM is also available as a 15 ECTS course, providing students with an immersive academic and practical experience.\n\nReady to push the boundaries of synthetic biology and shape a sustainable\nfuture? Visit the iGEM course page on [Brightspace for application\ndetails](https://brightspace.tudelft.nl/): LM3692.\n",
-      "alignment": "left",
-      "_template": "SectionWithGraphic"
-    },
-    {
       "title": "Our Sponsors",
       "sponsors": [
         {
