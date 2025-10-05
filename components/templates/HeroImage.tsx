@@ -3,7 +3,7 @@ import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { cn } from "../../lib/cn";
 
-export interface HeroImageProps {
+export interface HeroImageProps extends Record<string, unknown> {
   imageUrl: string;
   height?: string;
   textPosition?: "center" | "left" | "center-bottom";

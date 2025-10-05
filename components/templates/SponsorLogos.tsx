@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
-interface SponsorLogo {
+interface SponsorLogo extends Record<string, unknown> {
   logo: string;
   alt: string;
   link: string;
   scale?: number;
 }
 
-interface SponsorLogosProps {
+interface SponsorLogosProps extends Record<string, unknown> {
   title: string;
   sponsors: SponsorLogo[];
 }

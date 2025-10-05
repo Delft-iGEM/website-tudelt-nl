@@ -27,7 +27,7 @@ type Slide = {
   offsetX?: number;
   offsetY?: number;
   awards?: Award[];
-};
+} & Record<string, unknown>;
 
 type IgemHeroProps = Omit<
   React.ComponentProps<typeof HeroImage>,
