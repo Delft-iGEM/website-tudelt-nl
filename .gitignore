@@ -28,3 +28,7 @@ yarn-error.log*
 .tina/__generated__
 node_modules
 *storybook.log
+
+# we use pnpm instead of npm and yarn
+package-lock.json
+yarn.lock

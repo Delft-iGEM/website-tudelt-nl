@@ -2,15 +2,20 @@
   "title": "Snaccine",
   "header": {
     "logo": "/uploads/TUDelft_logo_white.svg",
+    "recolor": false,
     "nav": [
       {
         "label": "Home",
         "href": "/"
       },
       {
-            "label": "About iGEM",
-            "href": "/about-igem"
-          },
+        "label": "Snaccine",
+        "href": "https://2025.igem.wiki/tu-delft"
+      },
+      {
+        "label": "About iGEM",
+        "href": "/about-igem"
+      },
       {
         "label": "Previous Projects",
         "href": "",
@@ -19,7 +24,6 @@
             "label": "Nitroblast 2024",
             "href": "/nitroblast"
           }
-          
         ]
       }
     ]
