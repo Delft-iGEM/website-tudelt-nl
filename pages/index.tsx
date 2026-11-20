@@ -1,23 +1,31 @@
-import { InferGetStaticPropsType } from "next";
-import { useTina } from "tinacms/dist/react";
-import Layout from "../components/layout/layout";
-import { client } from "../tina/__generated__/client";
-import { Blocks } from "../components/templates";
+import Head from "next/head";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import JoinCta from "../components/JoinCta";
+import Projects from "../components/Projects";
+import Stats from "../components/Stats";
+import WhatIsIgem from "../components/WhatIsIgem";
 
-export default function HomePage(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
-  const { data } = useTina(props);
+const description =
+  "Since 2008, TU Delft student teams have designed, built and tested a synthetic-biology project every year for iGEM, the world's biggest synthetic biology competition.";
+
+export default function Home() {
   return (
-    <Layout data={data.global} className="bg-accent-lighter">
-      <Blocks blocks={data.home.blocks} />
-    </Layout>
+    <>
+      <Head>
+        <title>iGEM TU Delft</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content="iGEM TU Delft" />
+        <meta property="og:description" content={description} />
+      </Head>
+      <main>
+        <Hero />
+        <WhatIsIgem />
+        <Stats />
+        <Projects />
+        <JoinCta />
+      </main>
+      <Footer />
+    </>
   );
 }
-
-export const getStaticProps = async () => {
-  const props = await client.queries.homeQuery();
-  return {
-    props: JSON.parse(JSON.stringify(props)) as typeof props,
-  };
-};

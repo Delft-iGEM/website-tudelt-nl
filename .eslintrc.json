@@ -1,29 +1,8 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": true,
-    "tsconfigRootDir": "."
-  },
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "eslint:recommended",
-    "next",
-    "plugin:storybook/recommended",
-    "plugin:@typescript-eslint/recommended-type-checked"
-  ],
-  "rules": {
-    "@typescript-eslint/switch-exhaustiveness-check": "error",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off"
-  },
   "root": true,
-  "ignorePatterns": [
-    "node_modules",
-    ".next",
-    "out",
-    "tailwind.config.js",
-    "next.config.js",
-    "postcss.config.js",
-    "graphql.config.js"
-  ]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@next/next/no-img-element": "off"
+  },
+  "ignorePatterns": ["node_modules", ".next", "out", "next.config.js", "postcss.config.js"]
 }

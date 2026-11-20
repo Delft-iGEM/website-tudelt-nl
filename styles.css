@@ -1,21 +1,173 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@config './tailwind.config.js';
+@theme {
+  --color-navy: #011457;
+  --color-midnight: #0a1c3a;
+  --color-ink: #262626;
+  --color-muted: #595959;
+  --color-green: #00d492;
+  --color-green-dark: #007a55;
+  --color-gold: #f5c542;
+}
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: var(--color-ink);
+  }
+
+  a {
+    color: var(--color-green-dark);
+  }
+
+  a:hover {
+    color: #005f43;
+  }
+}
+
+@layer components {
+  /* Hero and join banner: navy fading out over the photo */
+  .fade-hero {
+    background: linear-gradient(
+      to right,
+      #011457 0%,
+      #011457 30%,
+      rgb(1 20 87 / 0) 75%
+    );
+  }
+
+  .fade-join {
+    background: linear-gradient(
+      to right,
+      #011457 0%,
+      #011457 40%,
+      rgb(1 20 87 / 0) 100%
+    );
+  }
+
+  .bg-what {
+    background: linear-gradient(
+        122deg,
+        rgb(0 255 153 / 0.4) 0%,
+        rgb(0 0 0 / 0) 70%,
+        rgb(0 0 0 / 0) 100%
+      ),
+      #0a1c3a;
+  }
+
+  .bg-stats {
+    background: radial-gradient(
+        closest-side at 72% 40%,
+        rgb(255 92 138 / 0.16) 0%,
+        rgb(255 92 138 / 0) 100%
+      ),
+      radial-gradient(
+        closest-side at 40% 85%,
+        rgb(3 163 255 / 0.14) 0%,
+        rgb(3 163 255 / 0) 100%
+      ),
+      #ffffff;
+  }
+
+  .bg-projects {
+    background: radial-gradient(
+        closest-side at 8% 12%,
+        rgb(3 163 255 / 0.1) 0%,
+        rgb(3 163 255 / 0) 100%
+      ),
+      radial-gradient(
+        closest-side at 95% 60%,
+        rgb(255 92 138 / 0.1) 0%,
+        rgb(255 92 138 / 0) 100%
+      ),
+      #ffffff;
+  }
+
+  /* Project cards */
+  .card-stripes {
+    background: repeating-linear-gradient(
+      135deg,
+      #12235a 0 14px,
+      #0e1d4c 14px 28px
+    );
+  }
+
+  /* Dark along the bottom where the text sits, plus a faint top edge for the
+     tags, so the team in the middle of the photo stays visible */
+  .card-scrim {
+    background: linear-gradient(
+        to bottom,
+        rgb(2 8 32 / 0.35) 0%,
+        rgb(2 8 32 / 0) 18%
+      ),
+      linear-gradient(
+        to top,
+        rgb(2 8 32 / 0.94) 0%,
+        rgb(2 8 32 / 0.8) 22%,
+        rgb(2 8 32 / 0.35) 42%,
+        rgb(2 8 32 / 0) 60%
+      );
+  }
+
+  /* On phones the text covers most of the card, so darken further up */
+  @media (width < 40rem) {
+    .card-scrim {
+      background: linear-gradient(
+        to top,
+        rgb(2 8 32 / 0.94) 0%,
+        rgb(2 8 32 / 0.82) 45%,
+        rgb(2 8 32 / 0.45) 80%,
+        rgb(2 8 32 / 0.3) 100%
+      );
+    }
+  }
+
+  .glow-default {
+    box-shadow: 0 6px 24px rgb(0 0 0 / 0.14);
+  }
+
+  .glow-grand {
+    box-shadow:
+      0 0 0 2px #f5c542,
+      0 0 30px 8px rgb(245 197 66 / 0.55),
+      0 10px 30px rgb(0 0 0 / 0.15);
+  }
+
+  .glow-runner {
+    box-shadow:
+      0 0 0 2px #5aa9ff,
+      0 0 30px 8px rgb(90 169 255 / 0.55),
+      0 10px 30px rgb(0 0 0 / 0.15);
+  }
+}
+
+/* Scroll-reveal (driven by lib/reveal.ts). Unlayered so it always wins. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal-on [data-reveal="zoom"] {
+    transform: scale(1.06);
+    transition:
+      opacity 1.2s ease-out,
+      transform 2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .reveal-on [data-reveal][data-shown] {
+    opacity: 1;
+    transform: none;
   }
 }

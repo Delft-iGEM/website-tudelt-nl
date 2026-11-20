@@ -16,12 +16,5 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": [
-    "svgr.d.ts",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".forestry/types.ts",
-    ".forestry/config.ts"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

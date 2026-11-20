@@ -1,10 +1,22 @@
 import "../styles.css";
 
-import { FC } from "react";
-import { AppProps } from "next/app";
+import type { AppProps } from "next/app";
+import { Inter } from "next/font/google";
+import { useScrollReveal } from "../lib/reveal";
 
-const App: FC<AppProps> = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-};
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
-export default App;
+export default function App({ Component, pageProps }: AppProps) {
+  useScrollReveal();
+
+  return (
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${inter.style.fontFamily};
+        }
+      `}</style>
+      <Component {...pageProps} />
+    </>
+  );
+}
