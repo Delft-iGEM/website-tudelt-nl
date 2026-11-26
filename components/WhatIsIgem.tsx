@@ -5,19 +5,19 @@ const pillars = [
     title: "Wet lab",
     text: "Engineer organisms from your DNA design, express proteins and build biological complex systems.",
     image: "/images/wet-lab.jpg",
-    alt: "Glassy cluster of cell-like bubbles",
+    alt: "Team members in lab coats laughing around a bench in the wet lab",
   },
   {
     title: "Dry lab",
     text: "Modelling, software and hardware that predict, guide and measure what happens in the lab.",
     image: "/images/dry-lab.jpg",
-    alt: "Coiled coral-coloured molecular structure",
+    alt: "Team member designing DNA constructs across two monitors and a laptop",
   },
   {
     title: "Human Practices",
     text: "Ethics, safety and input from the people a project affects, shaping it beyond the bench.",
     image: "/images/human-practices.jpg",
-    alt: "Blue and green organic forms floating in water",
+    alt: "Four team members smiling around a café table on the TU Delft campus",
   },
 ];
 

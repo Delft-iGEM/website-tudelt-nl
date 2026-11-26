@@ -170,4 +170,13 @@
     opacity: 1;
     transform: none;
   }
+
+  /* Project cards show straight away on phones */
+  @media (width < 40rem) {
+    .reveal-on [data-reveal="card"] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
 }

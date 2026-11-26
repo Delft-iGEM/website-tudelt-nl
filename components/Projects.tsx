@@ -62,7 +62,12 @@ function ProjectCard({
 
   return (
     // The scroll-reveal animation runs on this wrapper, not on the card itself.
-    <div data-reveal style={revealDelay((index % 2) * 110)} className="grid">
+    // "card" turns it off on phones (see styles.css).
+    <div
+      data-reveal="card"
+      style={revealDelay((index % 2) * 110)}
+      className="grid"
+    >
       {/* The 16:10 ratio lives on a spacer, not the card: the card keeps its
           column width and only grows taller if the text needs more room. */}
       <article
